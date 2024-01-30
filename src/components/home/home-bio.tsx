@@ -1,21 +1,31 @@
-'use client';
-import React from 'react';
-import { motion } from 'framer-motion';
+"use client";
+import React from "react";
+import { motion } from "framer-motion";
 
 export const HomeBio = () => (
-  <motion.div 
-  initial={{ opacity: 0, y: 8 }}
-  animate={{ opacity: 1, y: 0 }}
-  transition={{    
-    delay: 0.3,
-    duration: 0.15,
-    ease: [0.4, 0, 0.2, 1],
-    type: "tween",
-  }}
-  className="w-full max-w-[85%] space-y-3"
+  <motion.div
+    initial={{ opacity: 0, y: 8 }}
+    animate={{ opacity: 1, y: 0 }}
+    transition={{
+      delay: 0.3,
+      duration: 0.15,
+      ease: [0.4, 0, 0.2, 1],
+      type: "tween",
+    }}
+    className="w-full max-w-[85%] space-y-3"
   >
     <p className="font-medium">About</p>
-    <p className="text-secondary">I’ve been practicing building products for around 10 years. Spending most of that working in the early-stages, getting new products off the ground.  Most recently, I lead design at Lantum where I worked on building staffing and scheduling software for healthcare, on a mission to save the NHS £1bn a year.</p>
-    <p className="text-secondary">Away from the screen, I like to travel. Particularly on motorcycles and in my camper van. I also enjoy hiking, collecting records, and playing guitar. I live in Nottingham with my wife, Harriet and my rabbit, Daisy.</p>
-    </motion.div>
-)
+    <p className="text-secondary">
+      I’ve been practicing building products for around 10 years. Spending most
+      of that working in the early-stages, getting new products off the ground.
+      Most recently, I lead design at Lantum where I worked on building staffing
+      and scheduling software for healthcare, on a mission to save the NHS £1bn
+      a year.
+    </p>
+    <p className="text-secondary">
+      Away from the screen, I like to travel. Particularly on motorcycles and in
+      my camper van. I also enjoy hiking, collecting records, and playing
+      guitar. I live in Nottingham with my wife, Harriet and my rabbit, Daisy.
+    </p>
+  </motion.div>
+);

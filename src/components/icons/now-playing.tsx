@@ -6,4 +6,4 @@ export const NowPlayingIcon = () => (
       <span className="w-[4px] h-full bg-[#1db954] animate-[nowPlayingAnimation_2.2s_ease_infinite_-3.7s_alternate] origin-bottom"></span>
     </span>
   </div>
-)
+);

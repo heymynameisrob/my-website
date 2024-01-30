@@ -4,7 +4,7 @@ export type Link = {
   date: string;
   title: string;
   description: string;
-}
+};
 
 export type Song = {
   albumImage: string;
@@ -13,4 +13,4 @@ export type Song = {
   isPlaying: boolean;
   songUrl: string;
   title: string;
-}
+};

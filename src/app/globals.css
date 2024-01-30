@@ -1,0 +1,142 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+
+  /**
+  * Root Variables - These are aliased in tailwind.config.js. If you want to edit the core theme, change these. If you just want to shift the usage of these colors, edit there.
+  */
+
+  --color-accent: hsl(252, 56%, 57%);
+  --color-accent-light: hsl(256, 100%, 95%);
+  --color-accent-dark: hsl(253, 55%, 31%);
+
+  --color-border: hsla(32, 32%, 32%, 0.1);  
+  --color-border-secondary: hsla(32,32%,32%,.08);
+  --color-border-tertiary: hsla(32,32%,32%,.05);  
+
+  --color-inline-note: hsla(252, 56%, 57%, 0.3);
+
+  /* Base Grays - Can replace with either Radix UI or Tailwind grays */
+  
+  --gray-0: hsla(0, 0%, 100%, 1); /* App Background */
+  --gray-1: hsla(0, 0%, 96%, 1); /* Subtle UI Background */
+  --gray-2: hsla(0, 0%, 94%, 1); /* UI Background */  
+  --gray-3: hsla(0, 0%, 90%, 1); /* UI Hover or pressed */   
+  --gray-4: hsla(0, 0%, 88%, 1); /* UI Active or selected */
+  --gray-5: hsla(0, 0%, 85%, 1); /* Border */
+  --gray-6: hsla(0, 0%, 81%, 1); /* Med contrast border / focus */
+  --gray-7: hsla(0, 0%, 73%, 1); /* Hover UI border */
+  --gray-8: hsla(0, 0%, 64%, 1); /* Muted */
+  --gray-9: hsla(0, 0%, 55%, 1); /* Disabled Text */
+  --gray-10: hsla(0, 0%, 51%, 1); /* General Gray */
+  --gray-11: hsla(0, 0%, 39%, 1); /* Secondary Text */
+  --gray-12: hsla(0, 0%, 12%, 1); /* Text */
+  --gray-inverted: hsla(0, 0%, 93%, 1); /* Inverted Text */
+
+  --shadow-button: 0px -1px 0px 0px hsla(0,0%,100%,.04),0px 0px 0px 1px hsla(0,0%,100%,.12),0px 0px 1px 0px rgba(0,0,0,.04),0px 2px 2px 0px rgba(0,0,0,.04),0px 4px 2px 0px rgba(0,0,0,.04),0px 6px 3px 0px rgba(0,0,0,.04);
+  --shadow-base: 0px 0px 4px rgba(0,0,0,.08),0px 0px 10px rgba(0,0,0,.12),0px 0px 24px rgba(0,0,0,.16),0px 0px 80px rgba(0,0,0,.2);
+  --shadow-base: 0px 1px 1px -1px rgb(0 0 0 / 0.08), 0px 2px 2px -1px rgb(0 0 0 / 0.08), 0px 0px 0px 1px rgb(0 0 0 / 0.06), inset 0px 1px 0px #fff, inset 0px 1px 2px 1px #fff, inset 0px 1px 2px rgb(0 0 0 / .06);
+  --shadow-button-base: 0px 0px 0px 0.5px rgba(0,0,0,.4),0px 1px 1px -1px rgba(0,0,0,.12),0px 2px 2px -1px rgba(0,0,0,.12),inset 0px 0.5px 0px hsla(0,0%,100%,.06),inset 0px 0px 1px 0px hsla(0,0%,100%,.16),inset 0px -6px 12px -4px rgba(0,0,0,.16);
+  --shadow-button-accent: 0px 1px 1px -1px rgba(0,0,0,.08),0px 2px 2px -1px rgba(0,0,0,.08),0px 0px 0px 1px rgba(0,0,0,.06),inset 0px 1px 0px #fff,inset 0px 0px 2px 1px #fff,inset 0px 1px 2px rgba(0,0,0,.06),inset 0px -4px 8px -4px rgba(0,0,0,.06);
+}
+
+:root.dark,
+.dark {
+  
+  --color-border: hsla(0,0%,100%,.12);
+  --color-border-secondary: hsla(0,0%,100%,.08);
+  --color-border-tertiary: hsla(0,0%,100%,.06);  
+  
+  --gray-0: hsla(0, 0%, 7%, 1);
+  --gray-1: hsla(0, 0%, 10%, 1);
+  --gray-2: hsla(0, 0%, 13%, 1);
+  --gray-3: hsla(0, 0%, 16%, 1);
+  --gray-4: hsla(0, 0%, 19%, 1);
+  --gray-5: hsla(0, 0%, 22%, 1);
+  --gray-6: hsla(0, 0%, 28%, 1);
+  --gray-7: hsla(0, 0%, 34%, 1);
+  --gray-8: hsla(0, 0%, 38%, 1);
+  --gray-9: hsla(0, 0%, 43%, 1);
+  --gray-10: hsla(0, 0%, 48%, 1);
+  --gray-11: hsla(0, 0%, 68%, 1);
+  --gray-12: hsla(0, 0%, 92%, 1);
+  --gray-inverted: hsla(0, 0%, 12%, 1);
+
+  --shadow-button: 0px -1px 0px 0px hsla(0,0%,100%,.04),0px 0px 0px 1px hsla(0,0%,100%,.12),0px 0px 1px 0px rgba(0,0,0,.04),0px 2px 2px 0px rgba(0,0,0,.04),0px 4px 2px 0px rgba(0,0,0,.04),0px 6px 3px 0px rgba(0,0,0,.04);
+  --ui-shadow: 0px 0px 4px rgba(0,0,0,.08),0px 0px 10px rgba(0,0,0,.12),0px 0px 24px rgba(0,0,0,.16),0px 0px 80px rgba(0,0,0,.2);
+  --shadow-base: 0px 0px 0px 0.5px rgb(0 0 0 / 0.40), 0px 1px 1px -1px rgb(0 0 0 / 0.12), 0px 2px 2px -1px rgb(0 0 0 / 0.12), inset 0px 0.5px 0px rgb(255 255 255 / 0.06), inset 0px 0px 1px 0px rgb(255 255 255 / 0.16), inset 0px -6px 12px -4px rgb(0 0 0 / 0.16);
+  --shadow-button-base: 0px 0px 0px 0.5px rgba(0,0,0,.4),0px 1px 1px -1px rgba(0,0,0,.12),0px 2px 2px -1px rgba(0,0,0,.12),inset 0px 0.5px 0px hsla(0,0%,100%,.06),inset 0px 0px 1px 0px hsla(0,0%,100%,.16),inset 0px -6px 12px -4px rgba(0,0,0,.16);
+  --shadow-button-accent: 0px 1px 1px -1px rgba(0,0,0,.08),0px 2px 2px -1px rgba(0,0,0,.08),0px 0px 0px 1px rgba(0,0,0,.06),inset 0px 1px 0px #fff,inset 0px 0px 2px 1px #fff,inset 0px 1px 2px rgba(0,0,0,.06),inset 0px -4px 8px -4px rgba(0,0,0,.06);
+  
+}
+
+[aria-label][role~=tooltip]::after {
+  background:rgba(0,0,0,1) !important;  
+  border-radius:8px !important;
+  border:0 !important;
+  box-shadow:0 2px 4px rgba(0,0,0,0.12) !important;
+  white-space: nowrap;  
+}
+
+@layer base {
+  /* Base */
+
+  body {
+    overscroll-behavior-y: none;
+    text-rendering: optimizeLegibility;
+    min-height:100dvh;
+  }
+
+  * {
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none; /* IE 10+ */
+  }
+
+  ::-webkit-scrollbar-track {
+    -webkit-box-shadow: none !important;
+    background-color: transparent;
+  }
+  ::-webkit-scrollbar {
+    width: 3px !important;
+    background-color: transparent;
+  }
+  ::-webkit-scrollbar-thumb {
+    background-color: transparent;  
+  }
+
+
+  /* Basic Typography */
+  h1:not(.prose h1) {
+    @apply text-2xl leading-9 tracking-tight
+  }
+
+  h2:not(.prose h2) {
+    @apply text-xl leading-8 tracking-tight
+  }
+
+  h3:not(.prose h3) {
+    @apply text-lg leading-7 tracking-tight
+  }
+
+  h4:not(.prose h4) {
+    @apply text-base leading-6 font-medium tracking-tight
+  }
+
+  p:not(.prose p) {
+    @apply text-sm leading-6
+  }
+
+  small:not(.prose small) {
+    @apply text-sm leading-5
+  }
+
+  span:not(.prose span) {
+    @apply text-xs leading-5
+  }
+
+  strong {
+    @apply font-medium
+  }
+}

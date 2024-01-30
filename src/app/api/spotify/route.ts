@@ -4,8 +4,8 @@ import querystring from 'querystring';
 export const dynamic = "force-dynamic";
 
 const client_id = process.env.NEXT_PUBLIC_SPOTIFY_CLIENT_ID;
-const client_secret = process.env.NEXT_PUBLIC_SPOTIFY_CLIENT_SECRET;
-const refresh_token = process.env.NEXT_PUBLIC_SPOTIFY_REFRESH_TOKEN;
+const client_secret = process.env.SPOTIFY_CLIENT_SECRET;
+const refresh_token = process.env.SPOTIFY_REFRESH_TOKEN;
 
 const token_endpoint = `https://accounts.spotify.com/api/token`;
 const now_playing_endpoint = `https://api.spotify.com/v1/me/player/currently-playing`;

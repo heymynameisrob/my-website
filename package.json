@@ -6,8 +6,9 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint",
-    "prep": "npx tsc --noEmit --incremental && next lint --fix"
+    "lint": "next lint --fix",
+    "typecheck": "tsc --noEmit --incremental",
+    "prep": "yarn typecheck && next lint --fix"
   },
   "dependencies": {
     "@hookform/resolvers": "^3.3.4",

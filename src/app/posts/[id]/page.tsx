@@ -1,4 +1,5 @@
 import fs from "fs";
+import path from "path";
 import matter from "gray-matter";
 import md from "markdown-it";
 import { notFound } from "next/navigation";
@@ -13,7 +14,9 @@ import { MARKDOWN_IT_OPTIONS } from "@/lib/constants";
  */
 async function getPost(slug: string) {
   try {
-    const fileName = fs.readFileSync(`public/posts/${slug}.md`, "utf-8");
+    const dir = path.join(process.cwd(), "public/posts");
+    const postPath = path.join(dir, `${slug}.md`);
+    const fileName = fs.readFileSync(postPath, "utf-8");
     const { data: frontmatter, content } = matter(fileName);
 
     return { frontmatter, content };

@@ -1,0 +1,23 @@
+name: Typecheck and Lint
+
+on: [push, pull_request]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Use Node.js 16.x
+      uses: actions/setup-node@v2
+      with:
+        node-version: '16.x'
+        
+    - name: Install dependencies
+      run: yarn install
+
+    - name: Run typecheck
+      run: yarn run typecheck
+
+    - name: Run lint
+      run: yarn run lint

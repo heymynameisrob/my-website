@@ -13,7 +13,7 @@ import { MARKDOWN_IT_OPTIONS } from "@/lib/constants";
  */
 async function getPost(slug: string) {
   try {
-    const fileName = fs.readFileSync(`./src/app/posts/${slug}.md`, "utf-8");
+    const fileName = fs.readFileSync(`public/posts/${slug}.md`, "utf-8");
     const { data: frontmatter, content } = matter(fileName);
 
     return { frontmatter, content };
@@ -27,6 +27,7 @@ export default async function PostPage({ params }: { params: { id: string } }) {
 
   if (error || !frontmatter || !content) {
     // Assume that the error is that the file doesn't exist
+    console.log(error);
     return notFound();
   }
 

@@ -5,13 +5,13 @@ import { notFound } from "next/navigation";
 
 async function getAllPosts() {
   try {
-    const files = fs.readdirSync("./src/app/posts");
+    const files = fs.readdirSync("public/posts");
 
     const posts = files.map((fileName) => {
       if (!fileName.endsWith(".md")) return;
 
       const slug = fileName.replace(".md", "");
-      const readFile = fs.readFileSync(`./src/app/posts/${fileName}`, "utf-8");
+      const readFile = fs.readFileSync(`public/posts/${fileName}`, "utf-8");
       const { data: frontmatter } = matter(readFile);
 
       return {

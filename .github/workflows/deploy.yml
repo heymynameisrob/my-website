@@ -6,8 +6,7 @@ on:
   workflow_run:
     workflows: ["Typecheck and Lint"]
     types:
-      - completed
-  push:
+      - completed  
     branches:
       - main
 jobs:

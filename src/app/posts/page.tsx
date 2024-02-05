@@ -10,9 +10,9 @@ async function getAllPosts() {
     const files = fs.readdirSync(dir);
 
     const posts = files.map((fileName) => {
-      if (!fileName.endsWith(".md")) return;
+      if (!fileName.endsWith(".mdx")) return;
 
-      const slug = fileName.replace(".md", "");      
+      const slug = fileName.replace(".mdx", "");      
       const postPath = path.join(dir, `${fileName}`);
       const readFile = fs.readFileSync(postPath, "utf-8");      
       const { data: frontmatter } = matter(readFile);

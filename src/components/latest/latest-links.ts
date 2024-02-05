@@ -13,7 +13,7 @@ export const LINKS: Array<Link> = [
     id: "002",
     title: "Lantum iOS & Android",
     description: "Companion for busy clinicians",
-    url: "/posts/lantum-app",
+    url: "https://lantum.com",
     date: getYear(2023),
   },
   {

@@ -1,5 +1,8 @@
+import withMDX from '@next/mdx'
+ 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  pageExtensions: ['js', 'jsx', 'mdx', 'ts', 'tsx'],
   logging: {
     fetches: {
       fullUrl: true,
@@ -79,4 +82,4 @@ const securityHeaders = [
 ];
 
 
-export default nextConfig;
+export default withMDX(nextConfig)

@@ -139,4 +139,8 @@
   strong {
     @apply font-medium
   }
+
+  .line-number {
+    margin-right:4px;
+  }
 }

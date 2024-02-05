@@ -18,9 +18,6 @@ export const HomeBio = () => (
     <p className="text-secondary">
       I’ve been practicing building products for around 10 years. Spending most
       of that working in the early-stages, getting new products off the ground.
-      Most recently, I lead design at Lantum where I worked on building staffing
-      and scheduling software for healthcare, on a mission to save the NHS £1bn
-      a year.
     </p>
     <p className="text-secondary">
       Away from the screen, I like to travel. Particularly on motorcycles and in

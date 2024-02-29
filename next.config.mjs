@@ -12,7 +12,7 @@ const nextConfig = {
     remotePatterns: [
       {
         protocol: 'https',
-        hostname: 'i.scdn.co',        
+        hostname: 'i.scdn.co',         
       },
     ],
   },
@@ -82,4 +82,4 @@ const securityHeaders = [
 ];
 
 
-export default withMDX(nextConfig)
+export default nextConfig

@@ -6,15 +6,15 @@ import { notFound } from "next/navigation";
 
 async function getAllPosts() {
   try {
-    const dir = path.join(process.cwd(), "public/posts");    
+    const dir = path.join(process.cwd(), "public/posts");
     const files = fs.readdirSync(dir);
 
     const posts = files.map((fileName) => {
       if (!fileName.endsWith(".mdx")) return;
 
-      const slug = fileName.replace(".mdx", "");      
+      const slug = fileName.replace(".mdx", "");
       const postPath = path.join(dir, `${fileName}`);
-      const readFile = fs.readFileSync(postPath, "utf-8");      
+      const readFile = fs.readFileSync(postPath, "utf-8");
       const { data: frontmatter } = matter(readFile);
 
       return {

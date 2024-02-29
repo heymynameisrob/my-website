@@ -15,8 +15,8 @@ import options from "@/components/mdx/extensions";
 import { cn } from "@/lib/utils";
 
 /**
-  * Get the post with the given ID
- * Search markdown files in the /posts folder 
+ * Get the post with the given ID
+ * Search markdown files in the /posts folder
  */
 async function getPost(slug: string) {
   try {
@@ -31,13 +31,13 @@ async function getPost(slug: string) {
   }
 }
 
-export async function generateMetadata({ params } : any) {
-  const {frontmatter} = await getPost(params);
+export async function generateMetadata({ params }: any) {
+  const { frontmatter } = await getPost(params);
 
-  return{
-      title: frontmatter?.title || 'heymynameisrob',
-      description: frontmatter?.description || 'My website',
-  }
+  return {
+    title: frontmatter?.title || "heymynameisrob",
+    description: frontmatter?.description || "My website",
+  };
 }
 
 export default async function PostPage({ params }: { params: { id: string } }) {
@@ -51,7 +51,7 @@ export default async function PostPage({ params }: { params: { id: string } }) {
 
   return (
     <>
-      <div className="fixed inset-0 z-50 bg-gradient-to-b from-background to-transparent h-[64px] w-full" />      
+      <div className="fixed inset-0 z-50 bg-gradient-to-b from-background to-transparent h-[64px] w-full" />
       <div className="prose max-w-2xl mx-auto px-4 py-20 lg:py-28 xl:py-32">
         <GridLine orientation="y" align="left" offset={32} />
         <div className="flex flex-col mb-8 xl:mb-10">
@@ -62,21 +62,24 @@ export default async function PostPage({ params }: { params: { id: string } }) {
             {moment(frontmatter.date).fromNow()}
           </time>
         </div>
-        <div className={cn(
-          "prose-base",
-          "prose-h1:tracking-tight prose-h2:tracking-tight",
-          "prose-h1:font-medium prose-h2:font-medium prose-h3:font-medium",
-          "prose-h2:text-lg prose-h3:text-lg prose-h3:text-secondary",
-        )}>          
-          <MDXRemote 
-          source={content} 
-          components={{ VideoPlayer, Image }} 
-          // @ts-ignore
-          options={options}  />  
+        <div
+          className={cn(
+            "prose-base",
+            "prose-h1:tracking-tight prose-h2:tracking-tight",
+            "prose-h1:font-medium prose-h2:font-medium prose-h3:font-medium",
+            "prose-h2:text-lg prose-h3:text-lg prose-h3:text-secondary",
+          )}
+        >
+          <MDXRemote
+            source={content}
+            components={{ VideoPlayer, Image }}
+            // @ts-ignore
+            options={options}
+          />
         </div>
         <PostIsland />
         <GridLine orientation="y" align="right" offset={32} />
-      </div>      
+      </div>
     </>
   );
 }

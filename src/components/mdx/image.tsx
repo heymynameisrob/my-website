@@ -13,7 +13,7 @@ export const Image = ({
     <NextImage
       src={src}
       loading="lazy"
-      alt="title"
+      alt={title}
       {...props}
       className="object-fit object-cover m-0"
     />

@@ -1,7 +1,6 @@
 "use client";
 
 import { AspectRatio } from "@/components/ui/aspect-ratio";
-import { Player } from "video-react";
 
 export const VideoPlayer = ({
   src,

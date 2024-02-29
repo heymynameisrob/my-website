@@ -113,23 +113,23 @@
   }
 
   h2:not(.prose h2) {
-    @apply text-xl leading-8 tracking-tight
+    @apply text-xl leading-8 tracking-[-0.019em]
   }
 
   h3:not(.prose h3) {
-    @apply text-lg leading-7 tracking-tight
+    @apply text-lg leading-7 tracking-[-0.017em]
   }
 
   h4:not(.prose h4) {
-    @apply text-base leading-6 font-medium tracking-tight
+    @apply text-base leading-7 font-medium tracking-[-0.009em]
   }
 
   p:not(.prose p) {
-    @apply text-sm leading-6
+    @apply text-base leading-7 tracking-[-0.009em]  
   }
 
   small:not(.prose small) {
-    @apply text-sm leading-5
+    @apply text-sm leading-5 
   }
 
   span:not(.prose span) {

@@ -12,7 +12,7 @@ const buttonVariants = cva(
         default:
           "bg-primary text-background border border-primary shadow hover:opacity-90",
         accent:
-          "bg-accent text-white border border-accent shadow hover:opacity-90",
+          "bg-sky-500 text-white border border-sky-600 shadow hover:opacity-90",
         destructive: "bg-red-600 text-white hover:bg-destructive/90",
         secondary:
           "bg-ui border-[0.5px] border-primary text-primary hover:bg-ui-mid shadow-none",

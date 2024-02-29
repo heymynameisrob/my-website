@@ -10,9 +10,19 @@ const config = {
   ],
   prefix: "",
   theme: {
+    fontSize: {
+      "xs": ".688rem", // 12px
+      "sm": "0.813rem", // 13px 
+      "base": "0.983rem", // 15px
+      "lg": "1.25rem", // 20px
+      "xl": "1.5rem", // 24px
+      "2xl": "2rem", // 32px
+      "3xl": "2.25rem", // 36px
+      "4xl": "3rem",  // 48px
+    },
     container: {
       center: true,
-      padding: "2rem",
+      padding: "1rem",
       screens: {
         "lg": "720px",        
       },

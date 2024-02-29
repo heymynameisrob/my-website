@@ -12,9 +12,9 @@ export const HomeBio = () => (
       ease: [0.4, 0, 0.2, 1],
       type: "tween",
     }}
-    className="w-full max-w-[85%] space-y-3"
+    className="w-full max-w-[85%] space-y-4"
   >
-    <p className="font-medium">About</p>
+    <p className="font-medium">Rob Hough</p>
     <p className="text-secondary">
       I’ve been practicing building products for around 10 years. Spending most
       of that working in the early-stages, getting new products off the ground.

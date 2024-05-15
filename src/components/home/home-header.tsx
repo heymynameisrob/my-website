@@ -16,9 +16,8 @@ export const HomeHeader = () => (
     <NowPlaying />
     <div className="flex flex-col gap-1 md:gap-0">
       <h4 className="font-medium">Hey my name is Rob ✌️</h4>
-      <h4 className="text-secondary max-w-[85%]">
-        I’m a product designer based in the UK. Currently I lead design at
-        Lantum, building workforce software for the NHS.
+      <h4 className="text-secondary">
+        Product designer based in the UK. Currently on sabbatical.
       </h4>
     </div>
   </motion.div>

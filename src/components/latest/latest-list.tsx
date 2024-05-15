@@ -19,7 +19,7 @@ export const LatestList = () => {
       }}
       className="w-full space-y-2"
     >
-      <small className="font-medium">Latest</small>
+      <small className="font-medium">Projects</small>
       <div className="flex flex-col w-full">
         {LINKS.map((link: LinkType, index: number) => (
           <motion.div
@@ -37,7 +37,7 @@ export const LatestList = () => {
               rel="noopener noreferrer"
               href={link.url}
               className={cn(
-                "py-4 w-full flex flex-row items-center justify-between bg-transparent rounded-lg md:px-4 transition-all",
+                "py-4 w-full flex flex-col items-start justify-start bg-transparent rounded-lg md:px-4 transition-all md:-mx-4 md:flex-row md:items-center md:justify-between",
                 "hover:bg-ui focus:bg-ui focus:outline-none focus-visible:ring-offset-background focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2",
                 "dark:focus:bg-white/10 dark:focus:shadow-[inset_0px_1px_0px_hsla(0_,0%_,100%_,.02)_,inset_0px_0px_0px_1px_hsla(0_,0%_,100%_,.02)_,0px_1px_2px_rgba(0_,0_,0_,.12)_,0px_2px_4px_rgba(0_,0_,0_,.08)_,0px_0px_0px_0.5px_rgba(0_,0_,0_,.24)]",
                 "dark:hover:bg-white/10 dark:hover:shadow-[inset_0px_1px_0px_hsla(0_,0%_,100%_,.02)_,inset_0px_0px_0px_1px_hsla(0_,0%_,100%_,.02)_,0px_1px_2px_rgba(0_,0_,0_,.12)_,0px_2px_4px_rgba(0_,0_,0_,.08)_,0px_0px_0px_0.5px_rgba(0_,0_,0_,.24)]",
@@ -45,6 +45,7 @@ export const LatestList = () => {
               key={link.id}
             >
               <div className="flex flex-col gap-2 md:flex-row md:items-baseline">
+                <small className="text-base">{link.emoji}</small>
                 <small className="font-medium">{link.title}</small>
                 <small className="text-secondary">{link.description}</small>
               </div>

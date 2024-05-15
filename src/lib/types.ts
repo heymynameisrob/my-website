@@ -4,6 +4,7 @@ export type Link = {
   date: string;
   title: string;
   description: string;
+  emoji?: string
 };
 
 export type Song = {

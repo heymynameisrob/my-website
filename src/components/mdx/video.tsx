@@ -3,12 +3,10 @@
 import { AspectRatio } from "@/components/ui/aspect-ratio";
 
 export const VideoPlayer = ({
-  src,
-  title,
+  src,  
   ...props
 }: {
-  src: string;
-  title: string;
+  src: string;  
 }) => (
   <AspectRatio
     ratio={1.777 / 1}

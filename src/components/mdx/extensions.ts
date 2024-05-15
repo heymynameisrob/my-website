@@ -3,7 +3,6 @@ import emoji from "remark-emoji";
 // @ts-ignore
 import torchlight from "remark-torchlight";
 
-
 const options = {
   mdxOptions: {
     remarkPlugins: [

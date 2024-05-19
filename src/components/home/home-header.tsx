@@ -1,5 +1,4 @@
 "use client";
-import { motion } from "framer-motion";
 import { NowPlaying } from "@/components/now-playing/now-playing";
 import { Section } from "@/components/section";
 

@@ -1,8 +1,5 @@
 "use client";
 import React from "react";
-import { motion } from "framer-motion";
-import { Button } from "@/components/ui/button";
-import { EnvelopeOpenIcon } from "@radix-ui/react-icons";
 import { Section } from "@/components/section";
 
 export const HomeBio = () => (

@@ -3,10 +3,6 @@ import { HomeBio } from "@/components/home/home-bio";
 import { HomeContact } from "@/components/home/home-contact";
 import { HomeHeader } from "@/components/home/home-header";
 import { HomeRecent } from "@/components/home/home-recent";
-import { HomeWriting } from "@/components/home/home-writing";
-import { LatestList } from "@/components/latest/latest-list";
-import { ListItem } from "@/components/list-item";
-import { NowPlaying } from "@/components/now-playing/now-playing";
 
 export default function Home() {
   return (
@@ -22,8 +18,7 @@ export default function Home() {
           {/* <HomeWriting /> */}
         </div>
         <GridLine orientation="y" align="right" offset={32} />
-      </main>
-      {/* <BottomIsland /> */}
+      </main>      
     </>
   );
 }

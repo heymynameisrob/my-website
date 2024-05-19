@@ -1,27 +1,15 @@
 "use client";
-import React, { useEffect, useState } from "react";
+import React from "react";
 import Image from "next/image";
 import useSWR from "swr";
 import { NowPlayingIcon } from "@/components/icons/now-playing";
-import { NowPlayingAvatar } from "@/components/now-playing/now-playing-avatar";
 import { fetcher } from "@/lib/utils";
 
-export const NowPlaying = () => {
-  const [isPlaying, setIsPlaying] = useState(false);
+export const NowPlaying = () => {  
 
-  const { data, isLoading } = useSWR("/api/spotify", fetcher);
-
-  useEffect(() => {
-    if (data?.isPlaying) {
-      setIsPlaying(true);
-    } else {
-      setIsPlaying(false);
-    }
-  }, [data]);
-
-  if (isLoading) return <NowPlayingAvatar isPlaying={false} />;
-
-  if (!data?.isPlaying) return null;
+  const { data } = useSWR("/api/spotify", fetcher);
+  
+  if (!data?.isPlaying ) return null;
 
   return (
     <div className="fixed bottom-0 left-0 w-full py-1 px-2 bg-ui z-10 border-t border-primary flex flex-row items-center justify-between gap-4">

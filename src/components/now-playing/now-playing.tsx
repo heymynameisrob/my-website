@@ -28,11 +28,12 @@ export const NowPlaying = () => {
 
   return (
     <HoverCard>
-      <HoverCardTrigger>
+      <HoverCardTrigger className="w-8">
         <NowPlayingAvatar isPlaying={isPlaying} />
       </HoverCardTrigger>
       <HoverCardContent
         side="right"
+        align="center"
         sideOffset={8}
         className="dark w-56 bg-ui border border-primary text-primary rounded-md p-2"
       >

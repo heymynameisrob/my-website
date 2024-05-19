@@ -109,11 +109,11 @@
 
   /* Basic Typography */
   h1:not(.prose h1) {
-    @apply text-2xl leading-9 tracking-tight
+    @apply text-2xl leading-9
   }
 
   h2:not(.prose h2) {
-    @apply text-xl leading-8 tracking-tight
+    @apply text-xl leading-8
   }
 
   h3:not(.prose h3) {
@@ -125,7 +125,7 @@
   }
 
   p:not(.prose p) {
-    @apply text-sm leading-6
+    @apply text-base leading-7 tracking-normal
   }
 
   small:not(.prose small) {

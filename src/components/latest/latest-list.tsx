@@ -19,7 +19,7 @@ export const LatestList = () => {
       }}
       className="w-full space-y-2"
     >
-      <small className="font-medium">Projects</small>
+      <p className="font-medium">Projects</p>
       <div className="flex flex-col w-full">
         {LINKS.map((link: LinkType, index: number) => (
           <motion.div

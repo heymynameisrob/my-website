@@ -2,12 +2,7 @@
 
 import { AspectRatio } from "@/components/ui/aspect-ratio";
 
-export const VideoPlayer = ({
-  src,  
-  ...props
-}: {
-  src: string;  
-}) => (
+export const VideoPlayer = ({ src, ...props }: { src: string }) => (
   <AspectRatio
     ratio={1.777 / 1}
     className="w-full rounded-lg overflow-hidden border border-primary"

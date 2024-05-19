@@ -12,6 +12,7 @@
     "object-shorthand": "off",
     "class-methods-use-this": "off",
     "react-hooks/exhaustive-deps": "off",
-    "@next/next/no-img-element": "off"
+    "@next/next/no-img-element": "off",
+    "react/no-unescaped-entities": "off"
   }
 }

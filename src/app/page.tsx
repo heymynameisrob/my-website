@@ -18,10 +18,17 @@ export default function Home() {
           <HomeContact />
           <HomeRecent />
           {/* <HomeWriting /> */}
-        </div>   
+        </div>
       </main>
       <aside className="hidden col-span-1 bg-red-500 h-screen overflow-hidden relative md:block">
-        <Image src="/images/me-abroad.png" alt="Me in the Basque Country mountains, 2024" layout="fill" objectFit="cover" loading="eager" className="absolute inset-0" />
+        <Image
+          src="/images/me-abroad.png"
+          alt="Me in the Basque Country mountains, 2024"
+          layout="fill"
+          objectFit="cover"
+          loading="eager"
+          className="absolute inset-0"
+        />
       </aside>
       <NowPlaying />
     </div>

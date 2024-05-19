@@ -2,11 +2,6 @@
 import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import useSWR from "swr";
-import {
-  HoverCard,
-  HoverCardContent,
-  HoverCardTrigger,
-} from "@/components/ui/hover-card";
 import { NowPlayingIcon } from "@/components/icons/now-playing";
 import { NowPlayingAvatar } from "@/components/now-playing/now-playing-avatar";
 import { fetcher } from "@/lib/utils";
@@ -30,7 +25,12 @@ export const NowPlaying = () => {
 
   return (
     <div className="fixed bottom-0 left-0 w-full py-1 px-2 bg-ui z-10 border-t border-primary flex flex-row items-center justify-between gap-4">
-      <a href={data.songUrl} rel="noopener nofollow" target="_blank" className="flex flex-row items-center gap-4">
+      <a
+        href={data.songUrl}
+        rel="noopener nofollow"
+        target="_blank"
+        className="flex flex-row items-center gap-4"
+      >
         <Image
           src={data?.albumImage}
           alt={data?.album}

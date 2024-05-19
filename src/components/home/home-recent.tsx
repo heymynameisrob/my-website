@@ -7,7 +7,7 @@ export const HomeRecent = () => (
     <p className="font-medium">Recent</p>
     <ListItem label="Now">
       <div className="flex flex-col gap-2">
-        <p className="font-medium text-base">Sabbatical</p>        
+        <p className="font-medium text-base">Sabbatical</p>
       </div>
       <p className="font-sans text-secondary">
         Me and my wife are taking 3 months off to travel Europe in our
@@ -56,9 +56,10 @@ export const HomeRecent = () => (
         </a>
       </div>
       <p className="font-sans text-secondary">
-        As Design Lead, I helped pivot this agency to work with life science and pharma companies on discovery and innovation projects
-        during the pandemic. Launch various products including an ML talk
-        therapy app with Microsoft.
+        As Design Lead, I helped pivot this agency to work with life science and
+        pharma companies on discovery and innovation projects during the
+        pandemic. Launch various products including an ML talk therapy app with
+        Microsoft.
       </p>
     </ListItem>
   </Section>

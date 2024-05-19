@@ -26,40 +26,30 @@ export const NowPlaying = () => {
 
   if (isLoading) return <NowPlayingAvatar isPlaying={false} />;
 
+  if (!data?.isPlaying) return null;
+
   return (
-    <HoverCard>
-      <HoverCardTrigger className="w-8">
-        <NowPlayingAvatar isPlaying={isPlaying} />
-      </HoverCardTrigger>
-      <HoverCardContent
-        side="right"
-        align="center"
-        sideOffset={8}
-        className="dark w-56 bg-ui border border-primary text-primary rounded-md p-2"
-      >
-        <div className="flex flex-row items-center justify-between gap-4 w-full">
-          <div className="flex flex-row items-center gap-4">
-            <Image
-              src={data?.albumImage}
-              alt={data?.album}
-              width={48}
-              height={48}
-              className="rounded-md w-12 h-12"
-            />
-            <div className="flex flex-col w-full">
-              <small className="font-medium w-24 text-nowrap overflow-hidden text-ellipsis">
-                {data?.title}
-              </small>
-              <small className="w-24 text-nowrap overflow-hidden text-ellipsis">
-                {data?.artist}
-              </small>
-            </div>
-          </div>
-          <div className="p-2 grid place-items-center">
-            <NowPlayingIcon />
-          </div>
+    <div className="fixed bottom-0 left-0 w-full py-1 px-2 bg-ui z-10 border-t border-primary flex flex-row items-center justify-between gap-4">
+      <a href={data.songUrl} rel="noopener nofollow" target="_blank" className="flex flex-row items-center gap-4">
+        <Image
+          src={data?.albumImage}
+          alt={data?.album}
+          width={24}
+          height={24}
+          className="rounded-sm w-6 h-6"
+        />
+        <div className="flex flex-row items-baseline gap-2 w-full">
+          <small className="font-mono uppercase !text-xs text-nowrap overflow-hidden text-ellipsis">
+            {data?.title}
+          </small>
+          <small className="w-24 font-mono uppercase text-secondary !text-xs text-nowrap overflow-hidden text-ellipsis md:w-auto">
+            / {data?.artist}
+          </small>
         </div>
-      </HoverCardContent>
-    </HoverCard>
+      </a>
+      <div className="p-2 grid place-items-center">
+        <NowPlayingIcon />
+      </div>
+    </div>
   );
 };

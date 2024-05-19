@@ -7,7 +7,7 @@ export const ListItem = ({
   label: string;
   children: ReactNode;
 }) => (
-  <div className="grid grid-cols-1 gap-2 md:grid-cols-5 items-baseline">
+  <div className="flex flex-col-reverse grid-cols-1 gap-3 md:grid md:grid-cols-5 items-baseline">
     <time className="font-sans text-sm tabular-nums text-secondary col-span-1 md:mb-0">
       {label}
     </time>

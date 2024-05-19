@@ -23,7 +23,7 @@ export const Section = ({
       ease: [0.4, 0, 0.2, 1],
       type: "tween",
     }}
-    className={cn("w-full max-w-[85%] space-y-4", className)}
+    className={cn("w-full max-w-[85%] space-y-4 lg:space-y-6", className)}
   >
     {children}
   </motion.div>

@@ -10,7 +10,7 @@ export const Prose = ({ children }: { children: ReactNode }) => (
       "prose-h2:text-lg prose-h3:text-lg prose-h3:text-secondary",
       "prose-p:text-secondary prose-p:tracking-normal prose-strong:text-primary",
       "prose-pre:border prose-pre:border-black/10 dark:prose-pre:border-white/10",
-      "prose-li:text-secondary"
+      "prose-li:text-secondary",
     )}
   >
     {children}

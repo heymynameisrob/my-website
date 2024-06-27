@@ -8,7 +8,7 @@
   * Root Variables - These are aliased in tailwind.config.js. If you want to edit the core theme, change these. If you just want to shift the usage of these colors, edit there.
   */
 
-  --color-accent: hsl(252, 56%, 57%);
+  --color-accent: hsl(252, 50%, 54%);
   --color-accent-light: hsl(256, 100%, 95%);
   --color-accent-dark: hsl(253, 55%, 31%);
 
@@ -45,7 +45,7 @@
 :root.dark,
 .dark {
   
-  --color-border: hsla(0,0%,100%,.12);
+  --color-border: hsla(0,0%,100%,.10);
   --color-border-secondary: hsla(0,0%,100%,.08);
   --color-border-tertiary: hsla(0,0%,100%,.06);  
   

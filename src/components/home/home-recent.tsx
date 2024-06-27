@@ -1,65 +1,74 @@
 "use client";
 import { ListItem } from "@/components/list-item";
 import { Section } from "@/components/section";
+import { ArrowUpRight } from "lucide-react";
 
 export const HomeRecent = () => (
   <Section delay={0.5}>
-    <p className="font-medium">Recent</p>
+    <div className="pb-2">
+      <p className="font-medium">Work 💪</p>
+    </div>
     <ListItem label="Now">
       <div className="flex flex-col gap-2">
         <p className="font-medium text-base">Sabbatical</p>
       </div>
       <p className="font-sans text-secondary">
         Me and my wife are taking 3 months off to travel Europe in our
-        campervan. Currently, we're in Italy 🇮🇹
+        campervan. Currently, we're in Croatia 🇭🇷.
       </p>
     </ListItem>
-    <ListItem label="23 –">
-      <div className="flex flex-col gap-2">
-        <a
-          href="https://pilcrow.xyz"
-          rel="noopener noreferrer"
-          className="font-medium text-base underline"
-        >
-          Pilcrow
-        </a>
-      </div>
-      <p className="font-sans text-secondary">
-        I built Pilcrow as a side project to help me keep track of my thoughts.
-        It's now spiralled into a full PKM-style tool with a twist.
-      </p>
-    </ListItem>
-    <ListItem label="22 – 24">
+    <ListItem label="2022 – 2024">
       <div className="flex flex-col gap-2">
         <a
           href="https://lantum.com"
           rel="noopener noreferrer"
-          className="font-medium text-base underline"
+          className="font-medium text-base underline inline-flex items-center gap-1"
         >
           Lantum
+          <ArrowUpRight size={15} strokeWidth={1.5} />
         </a>
       </div>
       <p className="font-sans text-secondary">
-        I lead design here, helping Lantum move into new markets such as the US
-        and Secondary Care. I built several successful products and a thriving
-        design practice. Left to go on sabbatical.
+        As Head of Design, I worked to launch Lantum into Secondary Care
+        (Hospitals) in the UK and US. I lead a design team and worked on the
+        product vision. Projects included AI-assisted rota scheduling, full rota
+        team view, and shift swapping.
       </p>
     </ListItem>
-    <ListItem label="20 – 22">
+    <ListItem label="2020 – 2022">
       <div className="flex flex-col gap-2">
         <a
           href="https://nuom.studio"
           rel="noopener noreferrer"
-          className="font-medium text-base underline"
+          className="font-medium text-base underline inline-flex items-center gap-1"
         >
           nuom
+          <ArrowUpRight size={15} strokeWidth={1.5} />
         </a>
       </div>
       <p className="font-sans text-secondary">
-        As Design Lead, I helped pivot this agency to work with life science and
-        pharma companies on discovery and innovation projects during the
-        pandemic. Launch various products including an ML talk therapy app with
-        Microsoft.
+        I lead design, particulary on new product work, at this award-winning UX
+        agency specialising in life science and pharma work during the pandemic.
+        Projects included an ML talk therapy app with Microsoft, NHS data
+        analysis tools, and pharma trial recruitment applications.
+      </p>
+    </ListItem>
+    <ListItem label="2018 – 2020">
+      <div className="flex flex-col gap-2">
+        <a
+          href="https://waitrose.com"
+          rel="noopener noreferrer"
+          className="font-medium text-base underline inline-flex items-center gap-1"
+        >
+          Waitrose
+          <ArrowUpRight size={15} strokeWidth={1.5} />
+        </a>
+      </div>
+      <p className="font-sans text-secondary">
+        As Senior Designer contractor, primarily on the Grocery app experience.
+        I worked on the main checkout experience, helping to improve the
+        customer satisfaction rating as well as building out the WDX design
+        system.
       </p>
     </ListItem>
   </Section>

@@ -38,7 +38,7 @@ const ContentSecurityPolicy = `
   frame-src *.youtube.com *.twitter.com *.loom.com *.figma.com;
   style-src 'self' 'unsafe-inline' *.googleapis.com rsms.me;
   img-src * blob: data:;
-  media-src 'self' *.youtube.com *.gstatic.com;
+  media-src 'self' *.youtube.com *.gstatic.com *.rauno.me;
   connect-src *;
   font-src 'self' rsms.me *.googleapis.com *.gstatic.com;
 `;

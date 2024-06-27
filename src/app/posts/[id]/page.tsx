@@ -1,44 +1,10 @@
-import fs from "fs";
-import path from "path";
-import matter from "gray-matter";
 import moment from "moment";
-
-import { MDXRemote } from "next-mdx-remote/rsc";
 import { notFound } from "next/navigation";
+import { getPost } from "@/server/posts";
 import { PostIsland } from "@/components/posts/post-island";
-import { GridLine } from "@/components/grid-line";
-
-import { VideoPlayer } from "@/components/mdx/video";
-import { Image } from "@/components/mdx/image";
-import options from "@/components/mdx/extensions";
-
-import { cn } from "@/lib/utils";
-
-/**
- * Get the post with the given ID
- * Search markdown files in the /posts folder
- */
-async function getPost(slug: string) {
-  try {
-    const dir = path.join(process.cwd(), "public/posts");
-    const postPath = path.join(dir, `${slug}.mdx`);
-    const fileName = fs.readFileSync(postPath, "utf-8");
-    const { data: frontmatter, content } = matter(fileName);
-
-    return { frontmatter, content };
-  } catch (error) {
-    return { error };
-  }
-}
-
-export async function generateMetadata({ params }: any) {
-  const { frontmatter } = await getPost(params);
-
-  return {
-    title: frontmatter?.title || "heymynameisrob",
-    description: frontmatter?.description || "My website",
-  };
-}
+import { Badge } from "@/components/ui/badge";
+import { MDX } from "@/components/mdx";
+import { BookTextIcon, ClockIcon } from "lucide-react";
 
 export default async function PostPage({ params }: { params: { id: string } }) {
   const { frontmatter, content, error } = await getPost(params.id);
@@ -52,34 +18,31 @@ export default async function PostPage({ params }: { params: { id: string } }) {
   return (
     <>
       <div className="fixed inset-0 z-50 bg-gradient-to-b from-background to-transparent h-[64px] w-full" />
-      <div className="prose max-w-2xl mx-auto px-4 py-20 lg:py-28 xl:py-32">
-        <GridLine orientation="y" align="left" offset={32} />
-        <div className="flex flex-col mb-8 xl:mb-10">
-          <h1 className="text-base font-medium tracking-tight mb-0 xl:text-lg">
-            {frontmatter.title}
-          </h1>
-          <time className="text-base text-secondary">
-            {moment(frontmatter.date).fromNow()}
-          </time>
+      <div className="max-w-2xl mx-auto px-4 py-16 lg:py-24">
+        <div className="flex flex-col space-y-8 mb-16">
+          <div className="flex flex-col gap-4">
+            <div className="flex flex-col">
+              <h1 className="!text-base font-medium mb-0">
+                {frontmatter.title}
+              </h1>
+              <p className="!text-base text-secondary">
+                {frontmatter.description}
+              </p>
+            </div>
+          </div>
         </div>
-        <div
-          className={cn(
-            "prose-base",
-            "prose-h1:tracking-tight prose-h2:tracking-tight",
-            "prose-h1:font-medium prose-h2:font-medium prose-h3:font-medium",
-            "prose-h2:text-lg prose-h3:text-lg prose-h3:text-secondary",
-            "prose-p:font-serif prose-p:text-secondary prose-p:tracking-normal",
-          )}
-        >
-          <MDXRemote
-            source={content}
-            components={{ VideoPlayer, Image }}
-            // @ts-ignore
-            options={options}
-          />
+        <MDX content={content} />
+        <div className="flex items-center gap-3 mt-8 md:mt-16">
+          <Badge variant="secondary" className="gap-2">
+            <ClockIcon size={15} strokeWidth={1.5} />
+            <>Last updated {moment(frontmatter.date).format("MMM YY")}</>
+          </Badge>
+          <Badge variant="secondary" className="gap-2">
+            <BookTextIcon size={15} strokeWidth={1.5} />
+            <>{frontmatter.category || "Fleeting thought"}</>
+          </Badge>
         </div>
         <PostIsland />
-        <GridLine orientation="y" align="right" offset={32} />
       </div>
     </>
   );

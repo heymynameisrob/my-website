@@ -15,3 +15,26 @@ export type Song = {
   songUrl: string;
   title: string;
 };
+
+export type Post = {
+  slug?: string;
+  content?: string;
+  frontmatter: {
+    title: string;
+    description: string;
+    date: string;
+    category?: string;
+  };
+};
+
+export type Project = {
+  slug?: string;
+  title: string;
+  description: string;
+  image_url: string;
+  video_url?: string;
+  date: string;
+  ratio?: number;
+  isExternal: boolean;
+  externalLink?: string;
+};

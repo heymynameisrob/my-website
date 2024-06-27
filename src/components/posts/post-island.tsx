@@ -16,7 +16,7 @@ export const PostIsland = () => (
         ease: [0.4, 0, 0.2, 1],
         type: "tween",
       }}
-      className="dark z-50 p-0.5 origin-bottom flex flex-col justify-center items-center overflow-hidden bg-clip-padding bg-ui shadow-lg border border-primary rounded-[24px] text-primary pointer-events-auto"
+      className="dark z-50 p-1 origin-bottom flex flex-col justify-center items-center overflow-hidden bg-clip-padding bg-ui shadow-lg border border-primary rounded-[24px] text-primary pointer-events-auto"
     >
       <Button variant="accent" size="sm" asChild>
         <Link

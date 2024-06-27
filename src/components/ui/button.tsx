@@ -12,7 +12,7 @@ const buttonVariants = cva(
         default:
           "bg-primary text-background border border-primary shadow hover:opacity-90",
         accent:
-          "bg-accent text-white border border-accent hover:opacity-90 shadow-[0px_0px_0px_1px_rgba(0,_0,_0,_0.10),_0px_1px_2px_0px_rgba(35,_35,_35,_0.12),_0px_1px_0px_0px_rgba(255,_255,_255,_0.25)_inset] hover:opacity-90",
+          "bg-accent text-white border border-accent hover:opacity-90 shadow-[0px_0px_0px_1px_rgba(0,_0,_0,_0.50),_0px_1px_2px_0px_rgba(35,_35,_35,_0.12),_0px_0.5px_0px_0px_rgba(255,_255,_255,_0.25)_inset] hover:opacity-90",
         destructive: "bg-red-600 text-white hover:bg-destructive/90",
         secondary:
           "bg-ui border-[0.5px] border-primary text-primary hover:bg-ui-mid shadow-none",

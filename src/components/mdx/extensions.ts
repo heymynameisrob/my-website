@@ -11,7 +11,7 @@ const options = {
         torchlight,
         {
           config: {
-            theme: "monokuro-gray",
+            theme: "slack-theme-dark-mode",
             options: {
               lineNumbers: false,
             },

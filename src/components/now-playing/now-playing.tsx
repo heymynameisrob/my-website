@@ -5,11 +5,10 @@ import useSWR from "swr";
 import { NowPlayingIcon } from "@/components/icons/now-playing";
 import { fetcher } from "@/lib/utils";
 
-export const NowPlaying = () => {  
-
+export const NowPlaying = () => {
   const { data } = useSWR("/api/spotify", fetcher);
-  
-  if (!data?.isPlaying ) return null;
+
+  if (!data?.isPlaying) return null;
 
   return (
     <div className="fixed bottom-0 left-0 w-full py-1 px-2 bg-ui z-10 border-t border-primary flex flex-row items-center justify-between gap-4">

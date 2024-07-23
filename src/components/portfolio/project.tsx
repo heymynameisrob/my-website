@@ -44,7 +44,7 @@ export const Project = ({
             className="duration-150 ease"
           />
         )}
-        <div className="absolute z-10 bottom-0 left-0 w-full p-4 flex items-center justify-between gap-2 bg-gradient-to-t from-black/60 to-transparent">
+        <div className="absolute z-10 bottom-0 left-0 w-full p-4 h-24 flex items-end justify-between gap-2 bg-gradient-to-t from-black/40 to-black/0">
           <small className="font-medium">
             {project.title}
             {project.isExternal && <span className="ml-2 opacity-70">↗</span>}

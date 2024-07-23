@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Source_Serif_4 } from "next/font/google";
+import localFont from "next/font/local";
 import { GeistMono } from "geist/font/mono";
 import { GeistSans } from "geist/font/sans";
 import { ThemeProvider } from "@/components/theme-provider";
@@ -8,7 +8,11 @@ import "microtip/microtip.css";
 import "./globals.css";
 import { cn } from "@/lib/utils";
 
-const serif = Source_Serif_4({ subsets: ["latin"], variable: "--font-serif" });
+const baskervile = localFont({
+  display: "swap",
+  src: "/Baskervville-Regular.woff2",
+  variable: "--font-serif",
+});
 
 export const metadata: Metadata = {
   title: "heymynameisrob",
@@ -25,8 +29,8 @@ export default function RootLayout({
       <body
         className={cn(
           GeistSans.variable,
-          serif.variable,
           GeistMono.variable,
+          baskervile.variable,
           "bg-background text-primary antialiased font-sans",
         )}
       >

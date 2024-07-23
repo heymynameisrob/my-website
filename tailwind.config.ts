@@ -21,7 +21,7 @@ const config = {
       fontFamily: {        
         'sans': ["var(--font-geist-sans)"],
         'mono': ["var(--font-geist-mono)"],
-        'serif': ["var(--font-serif)"],
+        'serif': ["var(--font-serif)"],        
       },      
       colors: {
         "primary": "var(--gray-12)",
@@ -104,6 +104,17 @@ const config = {
             transform: 'scaleY(0.5)',
           },
         },
+        "rainbow": {
+          "0%": {
+            backgroundPosition:"0% 82%"
+          },
+          "50%": {
+            backgroundPosition:"100% 19%"
+          },
+          "100%": {
+            backgroundPosition:"0% 82%"
+          }    
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
@@ -111,6 +122,7 @@ const config = {
         "spotify": "spotify 2s infinite",
         "marquee": "marquee 5s infinite",
         "now-playing": "nowPlayingAnimation 2.2s ease infinite -2.2s alternate",
+        "rainbow": "rainbow 18s ease infinite"
       },
       typography: (theme: any) => ({
         DEFAULT: {

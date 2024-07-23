@@ -124,7 +124,7 @@
     @apply text-base leading-6 font-medium tracking-tight
   }
 
-  p:not(.prose p) {
+  p:not(.prose p, .home-headline p) {
     @apply text-base leading-7 tracking-normal
   }
 
@@ -132,7 +132,7 @@
     @apply text-sm leading-5
   }
 
-  span:not(.prose span) {
+  span:not(.prose span, .home-headline span) {
     @apply text-xs leading-5
   }
 
@@ -142,5 +142,14 @@
 
   .line-number {
     margin-right:4px;
+  }
+
+  .header-inline-text {
+    @apply font-serif text-[2rem] md:text-[3rem] shrink-0 inline;
+  }
+
+  .rainbow {
+    background: linear-gradient(124deg, #ff2400, #e81d1d, #e8b71d, #e3e81d, #1de840, #1ddde8, #2b1de8, #dd00f3, #dd00f3);
+    background-size: 1800% 1800%;    
   }
 }

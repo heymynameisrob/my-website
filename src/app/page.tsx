@@ -1,41 +1,17 @@
-// import { getAllPosts } from "@/server/posts";
-import { HomeBio } from "@/components/home/home-bio";
-import { HomeContact } from "@/components/home/home-contact";
-import { HomeHeader } from "@/components/home/home-header";
-import { HomeRecent } from "@/components/home/home-recent";
-// import { HomeWriting } from "@/components/home/home-writing";
-import { NowPlaying } from "@/components/now-playing/now-playing";
-import { Section } from "@/components/section";
+// import { FloatingMenu } from "@/components/floating-menu";
+import { HomeText } from "@/components/home";
+import { ThemeToggle } from "@/components/theme";
 
 export default async function Home() {
-  // const { posts } = await getAllPosts();
-
   return (
-    <div className="grid place-items-center">
-      <main className="relative max-w-prose mx-auto overflow-y-scroll px-6 py-16 md:py-24">
-        <HomeHeader />
-        <div className="space-y-16">
-          <HomeBio />
-          <HomeContact />
-          {/* <HomeWriting posts={posts.slice(0, 4)} />           */}
-          <HomeRecent />
-          <Section className="flex flex-col items-center">
-            <span>
-              <span className="opacity-70">
-                &copy; 2024 Rob Hough. The code for this website is
-              </span>{" "}
-              <a
-                className="underline text-primary"
-                href="https://github.com/heymynameisrob/my-website"
-              >
-                here
-              </a>
-              .
-            </span>
-          </Section>
-        </div>
+    <>
+      <div className="fixed top-0 left-0 w-full flex justify-end items-center px-4 py-2">
+        <ThemeToggle />
+      </div>
+      <main className="relative py-12 px-5 md:py-16 md:px-16 max-w-6xl">
+        <HomeText />
       </main>
-      <NowPlaying />
-    </div>
+      {/* <FloatingMenu />       */}
+    </>
   );
 }

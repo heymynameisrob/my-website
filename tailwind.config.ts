@@ -128,7 +128,7 @@ const config = {
         DEFAULT: {
           css: {
             '--tw-prose-body': 'var(--gray-12)',
-            '--tw-prose-headings': 'var(--gray-12)',
+            '--tw-prose-headings': 'var(--prose-heading)',
             '--tw-prose-lead': 'var(--gray-12)',
             '--tw-prose-links': 'var(--gray-12)',
             '--tw-prose-bold': 'var(--gray-12)',

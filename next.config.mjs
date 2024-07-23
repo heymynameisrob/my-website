@@ -12,7 +12,7 @@ const nextConfig = {
     remotePatterns: [
       {
         protocol: 'https',
-        hostname: 'i.scdn.co',         
+        hostname: 'ucarecdn.com',         
       },
     ],
   },
@@ -38,7 +38,7 @@ const ContentSecurityPolicy = `
   frame-src *.youtube.com *.twitter.com *.loom.com *.figma.com;
   style-src 'self' 'unsafe-inline' *.googleapis.com rsms.me;
   img-src * blob: data:;
-  media-src 'self' *.youtube.com *.gstatic.com *.rauno.me;
+  media-src 'self' *.youtube.com *.gstatic.com *.rauno.me ucarecdn.com;
   connect-src *;
   font-src 'self' rsms.me *.googleapis.com *.gstatic.com;
 `;

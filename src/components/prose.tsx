@@ -5,6 +5,7 @@ export const Prose = ({ children }: { children: ReactNode }) => (
   <div
     className={cn(
       "prose prose-base",
+      "prose-h1:font-serif",
       "prose-h1:tracking-tight prose-h2:tracking-tight",
       "prose-h1:font-medium prose-h2:font-medium prose-h3:font-medium",
       "prose-h2:text-lg prose-h3:text-lg prose-h3:text-secondary",

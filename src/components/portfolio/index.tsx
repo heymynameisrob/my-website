@@ -25,7 +25,7 @@ export const HomePortfolio = ({
   return (
     <>
       <ResponsiveMasonry
-        columnsCountBreakPoints={{ 350: 1, 750: 2, 900: 3 }}
+        columnsCountBreakPoints={{ 350: 1, 750: 2, 900: 4 }}
         className="h-full p-2"
       >
         <Masonry gutter="8px" className="group">

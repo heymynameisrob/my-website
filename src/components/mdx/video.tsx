@@ -2,14 +2,24 @@
 
 import { AspectRatio } from "@/components/ui/aspect-ratio";
 
-export const VideoPlayer = ({ src, ...props }: { src: string }) => (
+export const VideoPlayer = ({
+  src,
+  ratio,
+  ...props
+}: {
+  src: string;
+  ratio?: number;
+}) => (
   <AspectRatio
-    ratio={1.777 / 1}
+    ratio={ratio || 1.777 / 1}
     className="w-full rounded-lg overflow-hidden border border-primary"
   >
     <video
-      controls
+      controls={false}
       playsInline
+      autoPlay
+      muted
+      loop
       preload="metadata"
       {...props}
       className="absolute inset-0 w-full h-full object-fit object-cover m-0"

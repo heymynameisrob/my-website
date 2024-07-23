@@ -35,6 +35,8 @@
   --gray-12: hsla(0, 0%, 12%, 1); /* Text */
   --gray-inverted: hsla(0, 0%, 93%, 1); /* Inverted Text */
 
+  --prose-heading: var(--gray-12);
+
   --shadow-button: 0px -1px 0px 0px hsla(0,0%,100%,.04),0px 0px 0px 1px hsla(0,0%,100%,.12),0px 0px 1px 0px rgba(0,0,0,.04),0px 2px 2px 0px rgba(0,0,0,.04),0px 4px 2px 0px rgba(0,0,0,.04),0px 6px 3px 0px rgba(0,0,0,.04);
   --shadow-base: 0px 0px 4px rgba(0,0,0,.08),0px 0px 10px rgba(0,0,0,.12),0px 0px 24px rgba(0,0,0,.16),0px 0px 80px rgba(0,0,0,.2);
   --shadow-base: 0px 1px 1px -1px rgb(0 0 0 / 0.08), 0px 2px 2px -1px rgb(0 0 0 / 0.08), 0px 0px 0px 1px rgb(0 0 0 / 0.06), inset 0px 1px 0px #fff, inset 0px 1px 2px 1px #fff, inset 0px 1px 2px rgb(0 0 0 / .06);
@@ -61,8 +63,10 @@
   --gray-9: hsla(0, 0%, 43%, 1);
   --gray-10: hsla(0, 0%, 48%, 1);
   --gray-11: hsla(0, 0%, 68%, 1);
-  --gray-12: hsla(0, 0%, 92%, 1);
+  --gray-12: hsla(0, 0%, 92%, 1);  
   --gray-inverted: hsla(0, 0%, 12%, 1);
+
+  --prose-heading: #ffffff;
 
   --shadow-button: 0px -1px 0px 0px hsla(0,0%,100%,.04),0px 0px 0px 1px hsla(0,0%,100%,.12),0px 0px 1px 0px rgba(0,0,0,.04),0px 2px 2px 0px rgba(0,0,0,.04),0px 4px 2px 0px rgba(0,0,0,.04),0px 6px 3px 0px rgba(0,0,0,.04);
   --ui-shadow: 0px 0px 4px rgba(0,0,0,.08),0px 0px 10px rgba(0,0,0,.12),0px 0px 24px rgba(0,0,0,.16),0px 0px 80px rgba(0,0,0,.2);

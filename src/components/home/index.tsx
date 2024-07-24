@@ -19,7 +19,12 @@ export const HomeText = () => {
         <>
           <AnimText delay={0}>Hey my name is Rob</AnimText>
           <Avatar className="shrink-0 w-8 h-8 rounded-full inline-block mx-2 md:mx-4 md:w-16 md:h-16 ring-2 ring-primary ring-offset-2 ring-offset-background scale-100 duration-300 ease-out hover:scale-150">
-            <AvatarImage src={"https://ucarecdn.com/f3240935-e57c-47c5-b184-2d1094899ccf/-/preview/100x100/"} className="object-cover" />
+            <AvatarImage
+              src={
+                "https://ucarecdn.com/f3240935-e57c-47c5-b184-2d1094899ccf/-/preview/100x100/"
+              }
+              className="object-cover"
+            />
             <AvatarFallback>RH</AvatarFallback>
           </Avatar>
         </>

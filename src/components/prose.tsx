@@ -1,7 +1,7 @@
 import { ReactNode } from "react";
 import { cn } from "@/lib/utils";
 
-export const Prose = ({ children }: { children: ReactNode }) => (
+export const Prose = ({ children, className }: { children: ReactNode, className?: string }) => (
   <div
     className={cn(
       "prose prose-base",
@@ -12,6 +12,7 @@ export const Prose = ({ children }: { children: ReactNode }) => (
       "prose-p:text-secondary prose-p:tracking-normal prose-strong:text-primary",
       "prose-pre:border prose-pre:border-black/10 dark:prose-pre:border-white/10",
       "prose-li:text-secondary",
+      className
     )}
   >
     {children}

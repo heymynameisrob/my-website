@@ -19,7 +19,7 @@ export default function AnimText({ delay, children }: IAnimTextProps) {
       type: "tween",
       delay: delay,
       duration: 1,
-      ease: "easeInOut",
+      ease:"easeOut"
     });
     return controls.stop;
     // eslint-disable-next-line react-hooks/exhaustive-deps

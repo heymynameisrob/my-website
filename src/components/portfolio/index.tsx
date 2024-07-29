@@ -4,6 +4,7 @@ import Masonry, { ResponsiveMasonry } from "react-responsive-masonry";
 import { Project } from "@/components/portfolio/project";
 
 import type { Project as ProjectType } from "@/lib/types";
+import { Suspense } from "react";
 
 /**
  * Ideas:
@@ -23,7 +24,7 @@ export const HomePortfolio = ({
   projects: Array<ProjectType> | [];
 }) => {
   return (
-    <>
+    <Suspense fallback={null}>
       <ResponsiveMasonry
         columnsCountBreakPoints={{ 350: 1, 750: 2, 900: 4 }}
         className="h-full p-2"
@@ -34,6 +35,6 @@ export const HomePortfolio = ({
           ))}
         </Masonry>
       </ResponsiveMasonry>
-    </>
+    </Suspense>
   );
 };

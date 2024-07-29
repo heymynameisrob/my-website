@@ -23,7 +23,7 @@ export const Image = ({
       width={width}
       height={height}
       loading="lazy"
-      className={cn("rounded mt-0 mb-0", className)}
+      className={cn("rounded mt-0 !mb-0", className)}
     />
     <span className="text-xs max-w-[75%] mx-auto text-secondary text-center">
       {title}

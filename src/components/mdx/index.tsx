@@ -1,4 +1,4 @@
-'use client';
+"use client";
 import { Prose } from "@/components/prose";
 import { MDXRemote } from "next-mdx-remote/rsc";
 
@@ -7,11 +7,10 @@ import { Image } from "@/components/mdx/image";
 import options from "@/components/mdx/extensions";
 
 export const MDX = ({ content }: { content: string }) => {
-
-  return(
-    <Prose className="orchestration">
+  return (
+    <Prose>
+      {/* @ts-ignore */}
       <MDXRemote
-        ref={null}
         source={content}
         components={{ VideoPlayer, Image }}
         // @ts-ignore
@@ -19,5 +18,4 @@ export const MDX = ({ content }: { content: string }) => {
       />
     </Prose>
   );
-  
-}
+};

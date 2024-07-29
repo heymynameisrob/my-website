@@ -8,14 +8,17 @@
 
 import { useState, ReactNode } from "react";
 import { useRouter } from "next/navigation";
-import { Dialog, DialogContent } from "@/components/ui/dialog";
+import { Dialog, DialogContent, DialogTitle } from "@/components/ui/dialog";
+import { DialogDescription } from "@radix-ui/react-dialog";
 
 export const Modal = ({
   children,
+  title,
   closeHref,
   defaultOpen = true,
 }: {
   children: ReactNode;
+  title: string;
   closeHref?: string;
   defaultOpen?: boolean;
 }) => {
@@ -31,8 +34,12 @@ export const Modal = ({
 
   return (
     <Dialog open={open} onOpenChange={handleOpenChange}>
-      <DialogContent className="top-4 left-4 right-4 bottom-4 w-auto max-w-none translate-x-0 translate-y-0 overflow-y-scroll shadow-none">
-        {children}
+      <DialogContent className="flex flex-col top-4 left-4 right-4 bottom-4 w-auto max-w-none translate-x-0 translate-y-0 overflow-y-scroll shadow-none p-0">
+        <DialogTitle className="sr-only">{title}</DialogTitle>
+        <DialogDescription className="sr-only">{title}</DialogDescription>
+        <div className="w-full md:max-w-2xl mx-auto py-16 px-4 lg:py-24 break-words">
+          {children}
+        </div>
       </DialogContent>
     </Dialog>
   );

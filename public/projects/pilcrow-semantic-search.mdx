@@ -9,32 +9,25 @@ collections: ["pilcrow"]
 
 # Pilcrow's Semantic Search
 
-// Image of search
-
 Pilcrow is an AI-sprinkled note taking app, like Apple Notes on steroids.
 
-The design of [Pilcrow](https://pilcrow.xyz) aims to help you create a 'digital garden' - an evergreen notebook where you plant a seed of an idea and watch it grow. 
-Existing note apps are more based around project management and work than they are learning. For example, Pilcrow encourages you to write one idea per note. 
+It's aim is to help you create a 'digital garden' - an evergreen notebook where you plant a seed of an idea and watch it grow. 
+Existing note apps are more based around project management. They focus more on organising and storing your thoughts for specific use cases rather than open-ended learning. 
+Pilcrow encourages you to write one idea per note. 
 This is because the very act of writing a note bubbles up new ideas and helps you discover whilst you write. 
 Notes are seperated into lots of seperate ideas which you can connect together.
 
 Creating hundreds, perhaps thousands of notes in most apps can be a nightmare to organise and taxonomise. 
-Let's say you write up a new document and store it Folder A. 
-You do this because the other items in Folder A follow similar topics. 
-This love letter to Cheese and Pickle sandwiches obviously belongs in my 'Lunch' folder. 
-There's also a folder called 'Things I love' – doesn't this also fit in there too? 'Okay! I have an idea!' You can make a new folder called 'My favourite lunch' - sorted! Not so fast. Now everything is 'Lunch' AND 'Things I love' need re-organising to see if they now fit into 'My favourite lunch'. 
-
 Endless filing and organising takes lots of precious time away from what you're in this application to do: write. 
 
+## The idea
 The beauty of text-based documents is that they can be searched very easily. 
-But search patterns are often poorly built and can be fustrating as they can form a barrier between what the searcher *actually wants* and what the search can turn up with keywords (more on this down below).
 
-## Foundation
-The search UI pattern is one of most established and simple looking UI elements. Think of Google's homepage. You can probably draw it from memory it's so simple.
-But when you break down what's happening, there's quite a lot of complexity going on under the hood.
-When building out search for Pilcrow - I looked at lots of good examples of search patterns on complex-ish products.
+However, search patterns are often poorly built and can be fustrating as they can form a barrier between what the searcher *actually wants* and what the search can turn up with keywords (more on this down below).
 
-// UI shot
+// CORE UI SHOT/VIDEO
+
+## Foundations
 
 It's important that our search adheres to a few principles so that it not only functions properly but provides a useful and pleasurable experience. 
 We're putting most of our eggs in this basket as the main way to find notes in your digital garden.
@@ -43,11 +36,79 @@ We're putting most of our eggs in this basket as the main way to find notes in y
 2. **Helpful**: Obvious but important. Search UI can be daunting because there are almost infinite things you could search. We should help users understand the parameters of what they can search for.
 3. **Fast**: Something I've tried to bake right into Pilcrow across the board – search being slow is awful. Expectations of fast, responsive results are common place and create a poor experience if not met.
 
-## Available
 The entry point to search is a text input with a <span><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" className="inline-block text-primary size-5"><path fillRule="evenodd" d="M9 3.5a5.5 5.5 0 1 0 0 11 5.5 5.5 0 0 0 0-11ZM2 9a7 7 0 1 1 12.452 4.391l3.328 3.329a.75.75 0 1 1-1.06 1.06l-3.329-3.328A7 7 0 0 1 2 9Z" clipRule="evenodd" /></svg></span>
 icon to signify it's use case. Sitting at the top of the UI visually indicates that the search covers everything below, in this case – all your Pilcrow notes.
 
-// UI shot of opening modal
+<CodeBlock>
+  <CodeBlockPreview className="flex flex-col justify-start items-center px-6 pt-6">
+    <div className="w-full h-screen bg-background rounded-md border border-primary flex flex-col justify-start items-center">
+      <div className="w-full px-4 h-14 border-b border-primary flex justify-between gap-4 items-center">
+        <div className="shrink-0 w-8 h-8 rounded-full bg-ui" />
+        <PilcrowSearch />
+        <div className="flex justify-end items-center gap-2">
+          <div className="w-5 h-5 rounded-md bg-ui" />
+          <div className="w-5 h-5 rounded-md bg-ui" />
+        </div>
+      </div>
+      <div className="p-6 w-full">
+        <div class="grid grid-cols-3 gap-4">
+          <div class="flex flex-col gap-4">
+            <div className="h-[160px] w-full rounded-md bg-ui" />
+            <div className="h-[120px] w-full rounded-md bg-ui" />
+            <div className="h-[160px] w-full rounded-md bg-ui" />
+          </div>
+          <div class="flex flex-col gap-4">
+            <div className="h-[80px] w-full rounded-md bg-ui" />
+            <div className="h-[120px] w-full rounded-md bg-ui" />
+            <div className="h-[160px] w-full rounded-md bg-ui" />
+          </div>
+          <div class="flex flex-col gap-4">
+            <div className="h-[220px] w-full rounded-md bg-ui" />
+            <div className="h-[90px] w-full rounded-md bg-ui" />
+            <div className="h-[160px] w-full rounded-md bg-ui" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </CodeBlockPreview>
+  <CodeBlockCaption>
+    ```ts    
+    const [open, setOpen] = useState(false);
+    const [searchQuery, setSearchQuery] = useState("");
+
+    const { results, loading } = useSearch(searchQuery);
+
+    useHotkeys("/", () => setOpen(true), {
+      preventDefault: true,
+    });
+
+    const onKeyDown = useCallback(
+    (e: any) => {
+      if (!open) return;
+
+      if (e.key === "Backspace" && value.length < 1) {
+        e.preventDefault();
+        setOpen(false);
+      }
+
+      if (e.key === "Enter") {
+        setSearchQuery(value);
+      }
+    },[value.length]);
+
+  return (
+    <Popover open={open} onOpenChange={setOpen}>
+      <PopoverTrigger asChild>
+        <SearchInputButton onChange={setSearchQuery} />
+      </PopoverTrigger>
+      <PopoverContent>
+        {loading ? <SearchLoading /> : <SearchResults results={results} />}        
+      </PopoverContent>
+    </Popover>
+  )
+    ```
+  </CodeBlockCaption>
+</CodeBlock>
 
 In reality, that input is just a big button. 
 When clicked it opens up a dialog view
@@ -64,8 +125,10 @@ opens and closes the dialog respectively, whilst also automatically focusing on 
 ## Helpful
 
 
+## Under the hood
+- Talk about vectors
+- why semantic search adds a benefit
 
-## Say what you mean
 Semantic search means users can find exactly what they need by it's *semantic meaning* rather than by associated keywords. 
 For example, if you want to find a document on tips for 'Training your puppy' – a traditional search will break each word into seperate keywords.
 

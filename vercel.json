@@ -1,0 +1,5 @@
+{
+  "redirects": [
+    { "source": "/portfolio", "destination": "https://portfolio.heymynameisrob.com" }
+  ]
+}

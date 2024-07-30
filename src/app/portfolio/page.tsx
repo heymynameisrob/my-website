@@ -2,6 +2,7 @@ import Link from "next/link";
 import { HomePortfolio } from "@/components/portfolio";
 import { ThemeToggle } from "@/components/theme";
 import { getAllProjects } from "@/server/projects";
+import { CommandPalette } from "@/components/cmd";
 
 export default async function PortfolioPage() {
   const { projects } = await getAllProjects();
@@ -27,6 +28,7 @@ export default async function PortfolioPage() {
         </div>
       </div>
       <HomePortfolio projects={projects} />
+      <CommandPalette />
     </div>
   );
 }

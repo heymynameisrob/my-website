@@ -25,7 +25,7 @@ export const Project = ({
             ? project.externalLink
             : `/portfolio/${project.slug}`
         }
-        className="dark relative block w-full bg-neutral-100 border border-black/10 hover:[&_img]:scale-105 hover:[&_video]:scale-105 overflow-hidden rounded-lg dark:border-white/10 dark:bg-neutral-800"
+        className="dark relative block w-full bg-neutral-100 border border-black/10 hover:[&_img]:scale-105 hover:[&_video]:scale-105 overflow-hidden rounded-lg dark:border-white/10 dark:bg-neutral-800 outline-none focus-within:ring-2 focus-within:ring-primary focus-within:ring-opacity-50 focus:ring-2 focus:ring-primary focus:ring-opacity-50"
       >
         {project.video_url ? (
           <video

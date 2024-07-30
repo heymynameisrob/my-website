@@ -23,7 +23,7 @@ export const Project = ({
         href={
           project.externalLink
             ? project.externalLink
-            : `/portfolio/${project.slug}`
+            : `/portfolio/p/${project.slug}`
         }
         className="dark relative block w-full bg-neutral-100 border border-black/10 hover:[&_img]:scale-105 hover:[&_video]:scale-105 overflow-hidden rounded-lg dark:border-white/10 dark:bg-neutral-800"
       >

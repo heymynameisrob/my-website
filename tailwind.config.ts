@@ -142,7 +142,7 @@ const config = {
             '--tw-prose-pre-code': 'var(--gray-11)',
             '--tw-prose-pre-bg': 'var(--gray-2)',
             '--tw-prose-th-borders': 'var(--color-border)',
-            '--tw-prose-td-borders': 'var(--color-border)',
+            '--tw-prose-td-borders': 'var(--color-border)',            
           },
         },        
       }),

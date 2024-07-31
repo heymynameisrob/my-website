@@ -43,10 +43,13 @@ export async function getAllProjects(): Promise<GetAllProjects> {
         ratio: data.ratio,
         isExternal: data.isExternal,
         externalLink: data.externalLink,
+        hide: data.hide || false,
       };
     });
 
-    const sortedProjects = projects.sort(
+    const filterHiddenProjects = projects.filter((project) => !project.hide);
+
+    const sortedProjects = filterHiddenProjects.sort(
       (a: any, b: any) => Number(new Date(b.date)) - Number(new Date(a.date)),
     );
 

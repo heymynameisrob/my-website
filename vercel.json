@@ -1,5 +1,5 @@
 {
   "redirects": [
-    { "source": "/portfolio", "destination": "https://portfolio.heymynameisrob.com" }
+    { "source": "https://portfolio.heymynameisrob.com", "destination": "/portfolio" }
   ]
 }

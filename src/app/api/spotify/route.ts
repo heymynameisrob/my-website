@@ -22,6 +22,7 @@ export async function GET() {
         Authorization: `Basic ${basic}`,
         "Content-Type": "application/x-www-form-urlencoded",
       },
+      cache: "no-store",
       body: querystring.stringify({
         grant_type: "refresh_token",
         refresh_token,
@@ -43,6 +44,7 @@ export async function GET() {
     headers: {
       Authorization: `Bearer ${access_token}`,
     },
+    cache: "no-store",
   });
 
   if (response.status === 204) {

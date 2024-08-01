@@ -9,7 +9,6 @@ export default async function Home() {
       <main className="relative py-12 px-5 md:py-16 md:px-16 max-w-6xl">
         <HomeText />
       </main>
-      {/* <FloatingMenu />       */}
     </>
   );
 }

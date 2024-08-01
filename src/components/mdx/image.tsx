@@ -16,17 +16,17 @@ export const Image = ({
   width?: number;
   height?: number;
 }) => (
-  <div className="flex flex-col gap-4 my-[2em]">
+  <a href={src} className="flex flex-col gap-4 my-[2em] no-underline">
     <NextImage
-      src={src}
+      src={`${src}-/preview/${width}x${height}/`}
       alt={title}
       width={width}
       height={height}
       loading="lazy"
-      className={cn("rounded mt-0 !mb-0", className)}
+      className={cn("rounded mt-0 !m-0", className)}
     />
     <span className="text-xs max-w-[75%] mx-auto text-secondary text-center">
       {title}
     </span>
-  </div>
+  </a>
 );

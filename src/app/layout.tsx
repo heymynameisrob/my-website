@@ -1,17 +1,23 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import { GeistMono } from "geist/font/mono";
-import { GeistSans } from "geist/font/sans";
 import { ThemeProvider } from "@/components/theme-provider";
+import { Toaster } from "sonner";
+import { cn } from "@/lib/utils";
 
 import "microtip/microtip.css";
 import "./globals.css";
-import { cn } from "@/lib/utils";
 
-const baskervile = localFont({
+const serif = localFont({
   display: "swap",
-  src: "/Baskervville-Regular.woff2",
+  src: "/Jessen-Cicero12.woff2",
   variable: "--font-serif",
+});
+
+const switzer = localFont({
+  display: "swap",
+  src: "/Switzer-Variable.woff2",
+  variable: "--font-sans",
 });
 
 export const metadata: Metadata = {
@@ -28,15 +34,16 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning>
       <body
         className={cn(
-          GeistSans.variable,
+          switzer.variable,
           GeistMono.variable,
-          baskervile.variable,
+          serif.variable,
           "bg-background text-primary antialiased font-sans",
         )}
       >
         <ThemeProvider attribute="class" enableSystem disableTransitionOnChange>
           {children}
         </ThemeProvider>
+        <Toaster />
       </body>
     </html>
   );

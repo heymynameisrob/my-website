@@ -1,16 +1,14 @@
-import { Suspense } from "react";
 import { getProject } from "@/server/projects";
 import { MDX } from "@/components/mdx";
-import { Modal } from "@/components/modal";
+import { ThemeToggle } from "@/components/theme";
 
 export default async function Page({ params }: { params: { id: string } }) {
   const { content } = await getProject(params.id);
 
   return (
-    <Suspense fallback={null}>
-      <Modal title={params.id} closeHref="/portfolio">
-        <MDX content={content} />
-      </Modal>
-    </Suspense>
+    <div className="w-full md:max-w-2xl mx-auto py-16 px-4 lg:py-24 break-words">
+      <ThemeToggle />
+      <MDX content={content} />
+    </div>
   );
 }

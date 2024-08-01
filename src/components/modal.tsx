@@ -6,7 +6,7 @@
  * However, this gives us a cleaner implementation to use fuill page modal with a parallel route in Next JS.
  */
 
-import { useState, ReactNode } from "react";
+import { useState, ReactNode, useEffect } from "react";
 import { useRouter } from "next/navigation";
 import { Dialog, DialogContent, DialogTitle } from "@/components/ui/dialog";
 import { DialogDescription } from "@radix-ui/react-dialog";
@@ -31,6 +31,18 @@ export const Modal = ({
       router.replace(closeHref);
     }
   };
+
+  /**
+   * Pauses all videos when modal is open
+   * Improves performance and battery life for low-powered devices (and my Macbook Air for some reason)
+   */
+  useEffect(() => {
+    document.querySelectorAll("video").forEach((vid) => vid.pause());
+
+    return () => {
+      document.querySelectorAll("video").forEach((vid) => vid.play());
+    };
+  }, [open]);
 
   return (
     <Dialog open={open} onOpenChange={handleOpenChange}>

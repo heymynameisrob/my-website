@@ -4,7 +4,7 @@ import Masonry, { ResponsiveMasonry } from "react-responsive-masonry";
 import { Project } from "@/components/portfolio/project";
 
 import type { Project as ProjectType } from "@/lib/types";
-import { Suspense } from "react";
+import { Suspense, useEffect } from "react";
 
 /**
  * Ideas:
@@ -23,6 +23,25 @@ export const HomePortfolio = ({
 }: {
   projects: Array<ProjectType> | [];
 }) => {
+  /**
+   * Pauses all videos when the page is not visible
+   * Improves performance and battery life for low-powered devices (and my Macbook Air for some reason)
+   */
+  useEffect(() => {
+    document.addEventListener("visibilitychange", () => {
+      if (document.visibilityState === "visible") {
+        document.querySelectorAll("video").forEach((vid) => vid.play());
+      } else {
+        document.querySelectorAll("video").forEach((vid) => vid.pause());
+      }
+    });
+
+    return () => {
+      document.removeEventListener("visibilitychange", () => {});
+      document.querySelectorAll("video").forEach((vid) => vid.play());
+    };
+  }, []);
+
   return (
     <Suspense fallback={null}>
       <ResponsiveMasonry

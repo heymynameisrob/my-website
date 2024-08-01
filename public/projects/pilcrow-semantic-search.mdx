@@ -39,8 +39,8 @@ We're putting most of our eggs in this basket as the main way to find notes in y
 The entry point to search is a text input with a <span><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" className="inline-block text-primary size-5"><path fillRule="evenodd" d="M9 3.5a5.5 5.5 0 1 0 0 11 5.5 5.5 0 0 0 0-11ZM2 9a7 7 0 1 1 12.452 4.391l3.328 3.329a.75.75 0 1 1-1.06 1.06l-3.329-3.328A7 7 0 0 1 2 9Z" clipRule="evenodd" /></svg></span>
 icon to signify it's use case. Sitting at the top of the UI visually indicates that the search covers everything below, in this case – all your Pilcrow notes.
 
-<CodeBlock>
-  <CodeBlockPreview className="flex flex-col justify-start items-center px-6 pt-6">
+<CodeBlock preview={
+  <div className="flex flex-col justify-start items-center px-6 pt-6">
     <div className="w-full h-screen bg-background rounded-md border border-primary flex flex-col justify-start items-center">
       <div className="w-full px-4 h-14 border-b border-primary flex justify-between gap-4 items-center">
         <div className="shrink-0 w-8 h-8 rounded-full bg-ui" />
@@ -70,9 +70,9 @@ icon to signify it's use case. Sitting at the top of the UI visually indicates t
         </div>
       </div>
     </div>
-  </CodeBlockPreview>
-  <CodeBlockCaption>
-    ```ts    
+  </div>
+}>  
+  ```ts    
     const [open, setOpen] = useState(false);
     const [searchQuery, setSearchQuery] = useState("");
 
@@ -106,8 +106,7 @@ icon to signify it's use case. Sitting at the top of the UI visually indicates t
       </PopoverContent>
     </Popover>
   )
-    ```
-  </CodeBlockCaption>
+  ```  
 </CodeBlock>
 
 In reality, that input is just a big button. 

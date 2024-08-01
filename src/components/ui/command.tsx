@@ -16,7 +16,7 @@ const Command = React.forwardRef<
   <CommandPrimitive
     ref={ref}
     className={cn(
-      "dark flex h-full w-full flex-col overflow-hidden rounded-md bg-black text-white",
+      "dark flex h-full w-full flex-col overflow-hidden rounded-md bg-ui-low text-white",
       className,
     )}
     {...props}
@@ -53,7 +53,7 @@ const CommandInput = React.forwardRef<
   }
 >(({ className, currentView, ...props }, ref) => (
   <div
-    className="flex items-center bg-ui-low border-b border-white/10 px-3"
+    className="flex items-center bg-transparent border-b border-white/10 px-3"
     cmdk-input-wrapper=""
   >
     <Search className="mr-2 h-4 w-4 shrink-0 opacity-50" />
@@ -140,7 +140,6 @@ const CommandItem = React.forwardRef<
     ref={ref}
     className={cn(
       "relative flex cursor-default select-none items-center rounded-md px-2 py-1.5 text-sm outline-none transition-all duration-150 ease-out text-white",
-      "active:scale-[98]",
       "aria-selected:bg-white/10 aria-selected:shadow-[inset_0px_1px_0px_hsla(0_,0%_,100%_,.02)_,inset_0px_0px_0px_1px_hsla(0_,0%_,100%_,.02)_,0px_1px_2px_rgba(0_,0_,0_,.12)_,0px_2px_4px_rgba(0_,0_,0_,.08)_,0px_0px_0px_0.5px_rgba(0_,0_,0_,.24)]",
       className,
     )}

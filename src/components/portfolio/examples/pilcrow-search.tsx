@@ -25,8 +25,11 @@ export type SearchResult = {
 export const PilcrowSearch = () => {
   const [open, setOpen] = useState<boolean>(false);
   const [value, setValue] = useState<string>("");
+
+  /* eslint-disable */
   const [loading, setLoading] = useState<boolean>(false);
   const [searchQuery, setSearchQuery] = useState<string>("");
+  /* eslint-disable */
 
   const debouncedSearchTerm = useDebounce(value, 750);
 

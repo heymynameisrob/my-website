@@ -25,7 +25,7 @@ The beauty of text-based documents is that they can be searched very easily.
 
 However, search patterns are often poorly built and can be fustrating as they can form a barrier between what the searcher *actually wants* and what the search can turn up with keywords (more on this down below).
 
-// CORE UI SHOT/VIDEO
+<Image src="https://ucarecdn.com/fbe5281a-03b2-408e-b50f-5d2d11707797/" height="757" width="1740" title="Search lives at the top, sitting above all the content available in Pilcrow, actionable through a click or keyboard shortcut /" />
 
 ## Foundations
 
@@ -118,24 +118,19 @@ Hitting <kbd className="!font-mono !bg-ui !text-primary !border !border-primary"
 and <kbd className="!font-mono !bg-ui !text-primary !border !border-primary">Esc</kbd>
 opens and closes the dialog respectively, whilst also automatically focusing on the input on open.
 
-## Fast
+Starting to search on `change` (as the user types) rather than clicking a button labelled 'Search' or something similar is a common pattern that often makes the search feel more immediate. 
+However, you can cause yourself problems as with each character change, you send requests to your backend. This can overload things, making things slow and cumbersome.
 
-
-## Helpful
-
+I added a debounce to the Pilcrow search, waiting `750ms` until the request is fired. This gives the user enough time to stop typing but not enough that it feels unresponsive.
+There's nothing special about this value, it's just what *felt* right.
 
 ## Under the hood
-- Talk about vectors
-- why semantic search adds a benefit
+I'm not a backend guy. 
 
-Semantic search means users can find exactly what they need by it's *semantic meaning* rather than by associated keywords. 
-For example, if you want to find a document on tips for 'Training your puppy' – a traditional search will break each word into seperate keywords.
+Pilcrow uses Supabase, which in turn is built on top of Postgres. 
+Adding a text-based search uses `tsvector`, which is built into Postgres.
 
+I added a column called `plain_text` which would remove all the node decorations and things from the article and just display the text. 
+Whatever the query was in checked against this and the title.
 
-
-
-
-- Go over why we needed the search for Pilcrow OG
-- List out some of the challenges on finding documents, search patterns etc
-- Detail out keyboard controls, debounce search, semantic look up using vectors
 

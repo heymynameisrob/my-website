@@ -5,7 +5,7 @@ import Link from "next/link";
 import { useHotkeys } from "react-hotkeys-hook";
 import { AnimatePresence, motion, MotionConfig } from "framer-motion";
 import { NowPlayingInline } from "@/components/now-playing/now-playing-inline";
-import AnimText from "@/components/staggered-text";
+import AnimText from "@/components/anim-text";
 import { GitHubLogoIcon, InstagramLogoIcon } from "@radix-ui/react-icons";
 import { fetcher } from "@/lib/utils";
 
@@ -135,7 +135,7 @@ export const HomeText = () => {
               className="inline-flex"
             >
               <motion.a
-                href="https://meet.risecalendar.com/robhough/30-min-meeting"
+                href="https://meet.risecalendar.com/robhough/chat-to-me"
                 className="inline-flex text-primary leading-none mx-2 px-3 py-1 rounded-full bg-green-400 text-green-900 hover:bg-green-500 active:scale-95 md:text-3xl"
               >
                 available

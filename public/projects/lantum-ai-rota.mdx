@@ -1,11 +1,11 @@
 ---
-title: AI Rota Builder
-description: Vision for Lantum's AI Rota Builder
-image_url: https://ucarecdn.com/cb27361c-9f34-43c8-81e5-de5ac4b1a23d/-/preview/1000x750/
-date: 2024-01-12
+title: "AI Rota Builder"
+description: "Vision for Lantum's AI Rota Builder"
+image_url: https://ucarecdn.com/c42b62b4-747f-41af-a583-5e89e48d1968/
+date: "2024-01-12"
 ---
 
-# AI Rota Builder
+# Lantum's AI Rota Builder
 
 The NHS spends £10bn a year on ‘short notice staff’. One the main reasons is ‘rota gaps’ - shifts that need to be filled by law but have nobody on staff that can fill them. Consultants create a rota using templates that are outdated, often on spreadsheets, manually tweaking and changing allocation over 3 months to try to meet requirements as well as please junior doctors.
 
@@ -13,7 +13,7 @@ The result is over-worked consultant, under-served clinicians, and over-looked p
 
 At Lantum, I worked with our ML team as well as our HoP to see if ML/AI could provide the solution to our broken rota creation problem.
 
-// ScreenStudio video of UI
+<Image src="https://ucarecdn.com/ae80276c-ebdf-4020-8d2a-d83115c13e34/" width="1000" height="562" title="Main UI of the Rota builder with some annotations labelling what each part does" />
 
 ## Conception
 We aquired a really clever bit of software from a group of doctors which leveraged a **Monte Carlo method** algorithm to generate many rota possibilities based on staff requirements inputted by managers.
@@ -26,14 +26,12 @@ To see if this would work as a product, we needed to answer two questions:
 Our ML team built a service we dubbed 'SmartSolver', which would take in three requirements: The staffing needs, the contract rules, and preferences of the doctors involved. 
 It would 'balance' these when attempting to 'solve' the rota, spitting out the best possible version over time. 
 
-// 3 Requirements image, maybe some animation?
-
 ## Seperation of concerns
 At present, the product itself is just a service that takes in some requirements and spits out some CSV. 
 
 To fit it into our product, we looked at the entire rota lifecycle and split it into three parts. Each part required different sets of tasks and context in order to complete and move on to the next phase.
 
-// Workspaces image
+<VideoPlayer src="https://ucarecdn.com/ce25264e-0269-448e-bced-9a6bce3ad5d1/" title="We divided up Lantum into different workspaces based on the lifecycle. Each has their own colour-way and UI configuration around the same shell, like a different tool-belt for each set of tasks." />
 
 - **Plan**: Before a new rotation of doctors, the rota is planned and set out for the next 4-6 months. This is where our AI tool lives.
 - **Manage**: Whilst the rota is 'in-flight', changes will need to be made (e.g someone is sick, emergencies happen, or shfits are swapped). This is what Lantum already has and does well.
@@ -51,7 +49,7 @@ This came out of some in-depth research we did, which you can read about here.
 The UI for the solver is fairly straight forward. Following the shell of what we have in our 'Manage' view, the UI instantly feels familiar. 
 For example, actions to filter the view by <span className="px-2 py-px h-5 rounded-full bg-black/5 border border-primary dark:bg-white/5">Staff Type</span> sit in the top right toolbar - exactly where they sit in 'Manage' (even in the same order).
 
-// UI view
+<Image src="https://ucarecdn.com/c42b62b4-747f-41af-a583-5e89e48d1968/" height="562" width="1000" title="Close-up view of the Rota builder UI, where we leverage familiar patterns throughout the Lantum app but only show tasks relevant for rota building" />
 
 The X/Y axis show the types of shifts needed to be filled and the days of the week in this rota respectively. Individual staff members are then assigned to those cells by SmartSolver.
 The bottom row of Requests are incoming requests from clincians. These can be things like annual leave or preffered days not to work. These are triaged from the bottom, either via the SmartSolver or manually by the user dragging and dropping them into 'gap'.

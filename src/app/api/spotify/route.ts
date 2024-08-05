@@ -12,6 +12,15 @@ const now_playing_endpoint = `https://api.spotify.com/v1/me/player/currently-pla
 
 const basic = Buffer.from(`${client_id}:${client_secret}`).toString("base64");
 
+export type Spotify = {
+  albumImage: string;
+  album: string;
+  artist: string;
+  isPlaying: boolean;
+  songUrl: string;
+  title: string;
+};
+
 export async function GET() {
   const fetchToken = async () => {
     if (!client_id) return;
@@ -66,7 +75,7 @@ export async function GET() {
   const songUrl = song.item.external_urls.spotify;
   const title = song.item.name;
 
-  const data = {
+  const data: Spotify = {
     albumImage,
     album,
     artist,

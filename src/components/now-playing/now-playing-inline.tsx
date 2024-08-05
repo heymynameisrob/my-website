@@ -1,15 +1,14 @@
 "use client";
 import React from "react";
 import { motion } from "framer-motion";
-import useSWR from "swr";
 import AnimText from "@/components/staggered-text";
 import { Avatar, AvatarImage } from "@/components/ui/avatar";
-import { cn, fetcher } from "@/lib/utils";
+import { cn } from "@/lib/utils";
 
-export const NowPlayingInline = () => {
-  const { data } = useSWR("/api/spotify", fetcher);
+import type { Spotify } from "@/app/api/spotify/route";
 
-  if (!data?.isPlaying) return null;
+export const NowPlayingInline = ({ data }: { data: Spotify | null }) => {
+  if (!data) return null;
 
   const albumArtist = `${data?.album} by ${data?.artist}. `;
 

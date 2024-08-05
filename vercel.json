@@ -9,6 +9,16 @@
         }
       ],
       "destination": "/portfolio/:path*"
+    },
+    {
+      "source": "/",
+      "has": [
+        {
+          "type": "host",
+          "value": "portfolio.heymynameisrob.com"
+        }
+      ],
+      "destination": "/portfolio/"
     }
   ]
 }

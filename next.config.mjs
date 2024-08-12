@@ -41,7 +41,7 @@ const nextConfig = {
               value: 'app.heymynameisrob.com',
             },
           ],
-          destination: '/app/:path*',
+          destination: '/portfolio/:path*',
         },
       ],
     }

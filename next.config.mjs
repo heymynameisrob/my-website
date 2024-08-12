@@ -38,7 +38,7 @@ const nextConfig = {
           has: [
             {
               type: 'host',
-              value: 'app.heymynameisrob.com',
+              value: 'portfolio.heymynameisrob.com',
             },
           ],
           destination: '/portfolio/:path*',

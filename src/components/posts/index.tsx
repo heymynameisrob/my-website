@@ -17,7 +17,7 @@ export function Posts({ posts }: { posts: Array<PostType> }) {
 
 function Post({ post }: { post: PostType }) {
   return (
-    <div className="grid items-start grid-cols-[clamp(10rem,_8vw,_16rem),_1fr] gap-2">
+    <div className="grid items-start grid-cols-[clamp(6rem,_8vw,_10rem),_1fr] gap-2">
       <time className="!text-xs !leading-6 text-muted font-mono uppercase">
         {moment(post.frontmatter.date).format("MMM DD, YYYY")}
       </time>

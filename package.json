@@ -8,7 +8,7 @@
     "start": "next start",
     "lint": "next lint --fix",
     "typecheck": "tsc --noEmit",
-    "prep": "yarn typecheck && next lint --fix",
+    "prepare-commit": "yarn typecheck && next lint --fix",
     "prepare": "husky"
   },
   "dependencies": {

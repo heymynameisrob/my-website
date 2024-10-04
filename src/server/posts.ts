@@ -41,6 +41,8 @@ export async function getAllPosts(): Promise<GetAllPosts> {
           description: data.description,
           date: data.date,
           category: data.category,
+          canonical: data.canonical,
+          isHidden: data.isHidden || false,
         },
       };
     });
@@ -51,7 +53,7 @@ export async function getAllPosts(): Promise<GetAllPosts> {
         Number(new Date(a.frontmatter.date)),
     );
 
-    return { posts: sortedPosts };
+    return { posts: sortedPosts.filter((post) => !post?.frontmatter.isHidden) };
   } catch (error) {
     return { error, posts: [] };
   }
@@ -71,6 +73,8 @@ export async function getPost(slug: string): Promise<GetPost> {
         description: data.description,
         date: data.date,
         category: data.category,
+        canonical: data.canonical,
+        isHidden: data.isHidden || false,
       },
       content,
     };

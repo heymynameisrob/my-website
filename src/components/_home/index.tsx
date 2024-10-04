@@ -97,28 +97,11 @@ export const HomeText = () => {
                 initial={{ y: 15, opacity: 0, filter: "blur(4px)" }}
                 animate={{ y: 0, opacity: 1, filter: "blur(0px)" }}
                 transition={{ delay: 1 }}
-                className="relative top-3 shrink-0 w-8 h-8 rounded-sm items-center mx-3 md:w-12 md:h-12 p-1 pb-4 border border-black/5 bg-[#fcfcf3] shadow-md"
+                className="relative top-3 shrink-0 w-8 h-8 rounded-sm items-center mx-3 md:w-12 md:h-12 p-1 pb-3 border border-black/5 bg-[#fcfcf3] shadow-md"
               >
                 <img
                   src="https://ucarecdn.com/508485b5-b16b-47f6-b41e-2ef72f25f0ed/-/preview/360x480/"
                   alt="Harriet Goodman, my wife"
-                  className="w-full h-full object-cover shadow-[0_0_0_0.5px_rgba(0,_0,_0,_0.1)]"
-                />
-              </motion.a>
-            </div>
-            <AnimText delay={1.1}>and dog, Oggie</AnimText>
-            <div className="inline-flex shrink-0 -rotate-3">
-              <motion.a
-                href="https://ucarecdn.com/06470c4a-f731-4741-ba48-894ef277f1f2/"
-                rel="noopener nofollow"
-                initial={{ y: -15, opacity: 0, filter: "blur(4px)" }}
-                animate={{ y: 0, opacity: 1, filter: "blur(0px)" }}
-                transition={{ delay: 2.2 }}
-                className="relative top-3 shrink-0 w-8 h-8 rounded-sm items-center mx-3 md:w-12 md:h-12 p-1 pb-4 border border-black/5 bg-[#fcfcf3] shadow-md"
-              >
-                <img
-                  src="https://ucarecdn.com/06470c4a-f731-4741-ba48-894ef277f1f2/-/preview/750x1000/"
-                  alt="Oggie the Jack Russell"
                   className="w-full h-full object-cover shadow-[0_0_0_0.5px_rgba(0,_0,_0,_0.1)]"
                 />
               </motion.a>
@@ -136,9 +119,10 @@ export const HomeText = () => {
             >
               <motion.a
                 href="https://meet.risecalendar.com/robhough/chat-to-me"
-                className="inline-flex text-primary leading-none mx-2 px-3 py-1 rounded-full bg-green-400 text-green-900 hover:bg-green-500 active:scale-95 md:text-3xl"
+                aria-disabled="true"
+                className="inline-flex text-primary leading-none mx-2 px-3 py-1 rounded-full bg-ui active:scale-95 md:text-3xl"
               >
-                available
+                not available
               </motion.a>
             </motion.div>
             <AnimText delay={1.2}>for work. </AnimText>

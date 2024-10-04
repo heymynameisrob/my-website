@@ -1,10 +1,18 @@
 "use client";
 
-import { Button } from "@/components/ui/button";
+import { useEffect, useState } from "react";
 import { useTheme } from "next-themes";
+import { Button } from "@/components/ui/button";
 
 export const ThemeToggle = () => {
   const { theme, setTheme } = useTheme();
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  if (!mounted) return null;
 
   return (
     <div className="fixed top-0 left-0 w-full flex justify-end items-center px-4 py-2">

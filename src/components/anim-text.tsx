@@ -1,13 +1,19 @@
 "use client";
 import { useEffect } from "react";
 import { motion, useMotionValue, useTransform, animate } from "framer-motion";
+import { cn } from "@/lib/utils";
 
 export interface IAnimTextProps {
   delay?: number;
   children: any;
+  className?: string;
 }
 
-export default function AnimText({ delay, children }: IAnimTextProps) {
+export default function AnimText({
+  delay,
+  children,
+  className,
+}: IAnimTextProps) {
   const count = useMotionValue(0);
   const rounded = useTransform(count, (latest) => Math.round(latest));
   const displayText = useTransform(rounded, (latest) =>
@@ -26,9 +32,11 @@ export default function AnimText({ delay, children }: IAnimTextProps) {
   }, []);
 
   return (
-    <p className="header-inline-text">
+    <div>
       <span className="sr-only">{children}</span>
-      <motion.span>{displayText}</motion.span>
-    </p>
+      <motion.div className={cn("!text-inherit", className)}>
+        {displayText}
+      </motion.div>
+    </div>
   );
 }

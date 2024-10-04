@@ -2,9 +2,18 @@ import moment from "moment";
 import { notFound } from "next/navigation";
 import { getPost } from "@/server/posts";
 import { PostIsland } from "@/components/posts/post-island";
-import { Badge } from "@/components/ui/badge";
 import { MDX } from "@/components/mdx";
-import { BookTextIcon, ClockIcon } from "lucide-react";
+import { ClockIcon } from "lucide-react";
+
+export async function generateMetadata({ params }: { params: { id: string } }) {
+  const { frontmatter } = await getPost(params.id);
+
+  return {
+    title: frontmatter.title,
+    description: frontmatter.description,
+    canonical: frontmatter.canonical,
+  };
+}
 
 export default async function PostPage({ params }: { params: { id: string } }) {
   const { frontmatter, content, error } = await getPost(params.id);
@@ -32,15 +41,15 @@ export default async function PostPage({ params }: { params: { id: string } }) {
           </div>
         </div>
         <MDX content={content} />
-        <div className="flex items-center gap-3 mt-8 md:mt-16">
-          <Badge variant="secondary" className="gap-2">
-            <ClockIcon size={15} strokeWidth={1.5} />
-            <>Last updated {moment(frontmatter.date).format("MMM YY")}</>
-          </Badge>
-          <Badge variant="secondary" className="gap-2">
-            <BookTextIcon size={15} strokeWidth={1.5} />
-            <>{frontmatter.category || "Fleeting thought"}</>
-          </Badge>
+        <div className="flex items-center gap-1 mt-4">
+          <ClockIcon
+            size={16}
+            strokeWidth={2}
+            className="text-muted opacity-90"
+          />
+          <small className="font-medium text-muted">
+            Last updated {moment(frontmatter.date).format("MMM YY")}
+          </small>
         </div>
         <PostIsland />
       </div>

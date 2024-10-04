@@ -1,4 +1,3 @@
-import withMDX from '@next/mdx'
  
 /** @type {import('next').NextConfig} */
 const nextConfig = {
@@ -14,6 +13,10 @@ const nextConfig = {
         protocol: 'https',
         hostname: 'ucarecdn.com',         
       },
+      {
+        protocol: "https",
+        hostname: "i.scdn.co"
+      }
     ],
   },
   async headers() {

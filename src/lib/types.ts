@@ -24,6 +24,8 @@ export type Post = {
     description: string;
     date: string;
     category?: string;
+    canonical?: string;
+    isHidden: boolean;
   };
 };
 

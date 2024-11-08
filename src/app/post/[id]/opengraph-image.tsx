@@ -15,7 +15,7 @@ export default async function Image() {
   return new ImageResponse(
     (
       // ImageResponse JSX element
-      (<div
+      <div
         style={{
           fontSize: 128,
           background: "cyan",
@@ -28,8 +28,9 @@ export default async function Image() {
           fontFamily: "sans-serif",
           fontWeight: "bold",
         }}
-      >@heymynameisrob
-              </div>)
+      >
+        @heymynameisrob
+      </div>
     ),
     // ImageResponse options
     {

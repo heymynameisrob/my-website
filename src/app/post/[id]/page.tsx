@@ -25,10 +25,10 @@ export async function generateMetadata(props: {
 export async function generateStaticParams() {
   const { posts, projects } = await getAllPosts();
 
-  if (posts.length === 0 || projects.length === 0) return;
+  if (!posts || !projects) return;
 
   return [...posts, ...projects].map((post) => ({
-    id: post.slug,
+    id: post.slug as string,
   }));
 }
 

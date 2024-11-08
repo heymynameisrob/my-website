@@ -1,3 +1,4 @@
+import { Suspense } from "react";
 import { HomeBio } from "@/components/home-bio";
 import { HomeTabs } from "@/components/home-tabs";
 import { ThemeToggle } from "@/components/theme";
@@ -11,7 +12,9 @@ export default async function HomePage() {
       <ThemeToggle />
       <main className="relative flex flex-col space-y-12 max-w-7xl mx-auto px-5 py-12 md:py-16 lg:py-28">
         <HomeBio />
-        <HomeTabs postsPromise={postPromise} />
+        <Suspense>
+          <HomeTabs postsPromise={postPromise} />
+        </Suspense>
       </main>
     </>
   );

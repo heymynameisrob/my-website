@@ -10,7 +10,7 @@ export function SocialLinks() {
     <div className="flex flex-wrap gap-2 md:items-center md:flex-row">
       <Link
         title={AVAILABLE ? "Available now" : "Let's chat"}
-        link="#"
+        link="https://cal.com/heymynameisrob/30min"
         className={cn(
           "md:w-auto md:px-3 rounded-full",
           AVAILABLE

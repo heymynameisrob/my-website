@@ -25,7 +25,7 @@ export async function generateMetadata(props: {
 export async function generateStaticParams() {
   const { posts, projects } = await getAllPosts();
 
-  if (!posts || !projects) return;
+  if (!posts || !projects) return [];
 
   return [...posts, ...projects].map((post) => ({
     id: post.slug as string,

@@ -3,11 +3,7 @@ import { MDXRemote } from "next-mdx-remote/rsc";
 import { VideoPlayer } from "@/components/mdx/video";
 import { Image } from "@/components/mdx/image";
 import { Button } from "@/components/ui/button";
-import {
-  CodeBlock,
-  CodeBlockPreview,
-  CodeBlockCaption,
-} from "@/components/mdx/code-block";
+import { CodeBlockPreview } from "@/components/mdx/code-block";
 import { PilcrowSearch } from "@/components/portfolio/examples/pilcrow-search";
 import { Person } from "@/components/mdx/person";
 import { LantumMenu } from "@/components/portfolio/examples/lantum-menu";
@@ -25,9 +21,7 @@ export const MDX = ({ content }: { content: string }) => {
           VideoPlayer,
           Image,
           Button,
-          CodeBlock,
           CodeBlockPreview,
-          CodeBlockCaption,
           PilcrowSearch,
           Person,
           LantumMenu,

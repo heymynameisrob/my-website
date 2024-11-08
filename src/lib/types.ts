@@ -1,3 +1,5 @@
+import { isExternal } from "util/types";
+
 export type Link = {
   id: string;
   url: string;
@@ -25,18 +27,14 @@ export type Post = {
     date: string;
     category?: string;
     canonical?: string;
-    isHidden: boolean;
+    image_url?: string;
+    video_url?: string;
+    ratio?: number;
+    isHidden?: boolean;
+    isProject?: boolean;
+    isExternal?: boolean;
+    externalLink?: string;
   };
 };
 
-export type Project = {
-  slug?: string;
-  title: string;
-  description: string;
-  image_url: string;
-  video_url?: string;
-  date: string;
-  ratio?: number;
-  isExternal: boolean;
-  externalLink?: string;
-};
+export type PostFrontmatter = Post["frontmatter"];

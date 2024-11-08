@@ -130,7 +130,7 @@ export const LantumMenu = () => {
     <div className="relative flex items-center w-full bg-background border-primary border border-l-0 border-r-0 gap-2 p-3">
       <div className="w-[240px] h-10 bg-ui rounded-lg"></div>
       <Popover modal={true} open={open} onOpenChange={setOpen}>
-        <PopoverTrigger className="flex justify-between items-center gap-4 w-[240px] px-3 py-px bg-white h-10 rounded-lg shadow-[0px_1px_0px_1px_rgba(255,_255,_255,_0.03),_0px_0px_0px_1px_rgba(0,_0,_0,_0.10),_0px_1px_3px_0px_rgba(0,_0,_0,_0.06)] focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 hover:bg-ui-low data-[state=open]:ring-2 data-[state=open]:ring-primary data-[state=open]:ring-offset-2 data-[state=open]:ring-offset-background dark:bg-ui dark:hover:bg-ui-mid dark:data-[state=open]:bg-white/10 dark:border dark:border-primary">
+        <PopoverTrigger className="flex justify-between items-center gap-4 w-[240px] px-3 py-px bg-white h-10 rounded-lg shadow-[0px_1px_0px_1px_rgba(255,_255,_255,_0.03),_0px_0px_0px_1px_rgba(0,_0,_0,_0.10),_0px_1px_3px_0px_rgba(0,_0,_0,_0.06)] focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 hover:bg-gray-1 data-[state=open]:ring-2 data-[state=open]:ring-primary data-[state=open]:ring-offset-2 data-[state=open]:ring-offset-background dark:bg-ui dark:hover:bg-ui-mid dark:data-[state=open]:bg-white/10 dark:border dark:border-primary">
           <div className="flex items-center gap-2">
             <svg
               xmlns="http://www.w3.org/2000/svg"

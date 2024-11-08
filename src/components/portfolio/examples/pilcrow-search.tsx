@@ -121,7 +121,7 @@ export const PilcrowSearch = () => {
               Search your notes
             </small>
           </div>
-          <kbd className="font-mono text-primary text-xs tracking-widest shadow-sm px-1.5 h-6 rounded bg-ui-high border border-white/10 inline-flex items-center uppercase">
+          <kbd className="font-mono text-primary text-xs tracking-widest shadow-sm px-1.5 h-6 rounded bg-gray-3 border border-white/10 inline-flex items-center uppercase">
             /
           </kbd>
         </div>

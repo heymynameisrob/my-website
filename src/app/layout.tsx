@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import { GeistMono } from "geist/font/mono";
-import { ThemeProvider } from "@/components/theme-provider";
 import { Toaster } from "sonner";
+import Providers from "@/providers";
 import { cn } from "@/lib/utils";
 
 import "microtip/microtip.css";
@@ -40,9 +40,7 @@ export default function RootLayout({
           "bg-background text-primary antialiased font-sans",
         )}
       >
-        <ThemeProvider attribute="class" enableSystem disableTransitionOnChange>
-          {children}
-        </ThemeProvider>
+        <Providers>{children}</Providers>
         <Toaster />
       </body>
     </html>

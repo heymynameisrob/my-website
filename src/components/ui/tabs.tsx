@@ -14,7 +14,7 @@ const TabsList = React.forwardRef<
   <TabsPrimitive.List
     ref={ref}
     className={cn(
-      "inline-flex h-9 items-center justify-start rounded-t-md bg-transparent text-primary overflow-hidden px-1 border-b border-primary w-full",
+      "inline-flex h-11 items-center justify-start rounded-t-md bg-transparent text-primary overflow-hidden px-1 border-b border-primary w-full",
       className,
     )}
     {...props}
@@ -29,7 +29,8 @@ const TabsTrigger = React.forwardRef<
   <TabsPrimitive.Trigger
     ref={ref}
     className={cn(
-      "inline-flex items-center justify-center whitespace-nowrap h-9 px-3 py-1.5 text-xs text-secondary leading-none font-medium ring-offset-white border-b-2 border-transparent transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-background disabled:pointer-events-none disabled:opacity-50 data-[state=active]:border-black data-[state=active]:text-primary dark:data-[state=active]:border-white",
+      "flex w-full items-center justify-center whitespace-nowrap h-11 px-4 py-2 text-xs text-secondary leading-none font-medium ring-offset-white border-b-2 border-transparent transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-background disabled:pointer-events-none disabled:opacity-50 data-[state=active]:border-black data-[state=active]:text-primary dark:data-[state=active]:border-white",
+      "md:inline-flex md:w-auto",
       className,
     )}
     {...props}
@@ -44,7 +45,7 @@ const TabsContent = React.forwardRef<
   <TabsPrimitive.Content
     ref={ref}
     className={cn(
-      "mt-2 ring-offset-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gray-950 focus-visible:ring-offset-2 dark:ring-offset-gray-950 dark:focus-visible:ring-gray-300",
+      "py-8 ring-offset-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gray-950 focus-visible:ring-offset-2 dark:ring-offset-gray-950 dark:focus-visible:ring-gray-300",
       className,
     )}
     {...props}

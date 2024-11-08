@@ -22,7 +22,7 @@ export const MagicText = ({
           initial={{ opacity: 0, filter: "blur(4px)" }}
           animate={{ opacity: 1, filter: "blur(0px)" }}
           transition={{
-            duration: 0.3,
+            duration: 0.4,
             delay: i / 10 + (delay || 0),
           }}
           key={i}

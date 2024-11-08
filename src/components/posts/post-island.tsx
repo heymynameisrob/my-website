@@ -16,17 +16,18 @@ export const PostIsland = () => (
         ease: [0.4, 0, 0.2, 1],
         type: "tween",
       }}
-      className="dark z-50 p-1 origin-bottom flex flex-col justify-center items-center overflow-hidden bg-clip-padding bg-ui shadow-lg border border-primary rounded-[24px] text-primary pointer-events-auto"
     >
-      <Button variant="accent" size="sm" asChild>
-        <Link
-          href="/"
-          className="no-underline inline-flex justify-center gap-1"
-        >
-          <CornerDownLeft size={15} className="opacity-80" />
-          Go back
-        </Link>
-      </Button>
+      <div className="dark z-50 p-1 origin-bottom flex flex-col justify-center items-center overflow-hidden bg-clip-padding bg-ui shadow-lg border border-primary rounded-[24px] text-primary pointer-events-auto">
+        <Button variant="accent" size="sm" asChild>
+          <Link
+            href="/"
+            className="no-underline inline-flex justify-center gap-1"
+          >
+            <CornerDownLeft size={15} className="opacity-80" />
+            Go back
+          </Link>
+        </Button>
+      </div>
     </motion.div>
   </div>
 );

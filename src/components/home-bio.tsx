@@ -26,7 +26,7 @@ export function HomeBio() {
         <section className={cn("flex flex-col gap-4 z-0")}>
           <FadeIn delay={0.6}>
             <p className="text-secondary max-w-prose">
-              I'm a design engineer based in the UK. I work alsmost exclusively
+              I'm a design engineer based in the UK. I work almost exclusively
               with early-stage, B2B startups. I also ship a few of my own
               products, usually for free. I also like to travel, ride
               motorcycles, and collect records.

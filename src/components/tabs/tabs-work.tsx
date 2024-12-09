@@ -39,7 +39,7 @@ function WorkItem({ project }: { project: Post }) {
                 src={image_url}
                 alt={title}
                 loading="lazy"
-                className="w-full h-full object-cover rounded-xl"
+                className="w-full h-full object-cover origin-top-left object-left-top rounded-xl"
               />
             )}
           </AspectRatio>
